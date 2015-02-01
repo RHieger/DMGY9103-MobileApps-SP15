@@ -30,14 +30,6 @@ int main(int argc, const char * argv[]) {
             
         }   // end for
         
-        // Introduce an object of type BNRItem, then send
-        // it a message that only NSArray would understand,
-        // thereby causing a runtime exception error
-        
-        id lastObj = [items lastObject];
-        
-        [lastObj count];
-        
         // Perform fast enumeration of items NSMutableArray.
         
         for (BNRItem *item in items) {

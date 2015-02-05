@@ -40,6 +40,16 @@ int main(int argc, const char * argv[]) {
             
         }   // end for (BNRItem *item in items)
         
+        // Instantiate a new BNRItem with initWithNameAndSerialNumber
+        
+        BNRItem *nameAndSerialNumber =
+        [ [BNRItem alloc] initWithName: @"Ultra HD Monitor"
+                       AndSerialNumber: @"B1C3R2" ];
+        
+        // Log nameAndSerialNumber to console:
+        
+        NSLog(@"%@", nameAndSerialNumber);
+        
         // Destroy the mutable array object.
         
         items = nil;

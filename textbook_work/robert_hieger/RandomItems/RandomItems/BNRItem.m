@@ -85,6 +85,8 @@
     
 }   // end - (instancetype) initWithItemName, first initializer.
 
+
+
 - (instancetype) initWithItemName: (NSString *) name {
     
     return [self initWithItemName: name
@@ -92,6 +94,16 @@
                      serialNumber: @""];
     
 }   // end - (instancetype) initWithItemName, second initializer.
+
+
+- (instancetype) initWithName:(NSString *)name
+              AndSerialNumber:(NSString *)serialNumber {
+    
+    return [self initWithItemName: name
+                   valueInDollars: 500
+                     serialNumber: serialNumber];
+    
+}   // end initWithName: AndSerialNumber:
 
 // Override default initializer, inherited from NSObject.
 

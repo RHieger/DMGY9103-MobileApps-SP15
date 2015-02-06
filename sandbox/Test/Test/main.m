@@ -40,9 +40,9 @@ int main(int argc, const char * argv[]) {
         // NOTE: The values returned by the following NSLog
         // statements are size in bytes.
         
-        NSLog( @"Size of int: %zu", sizeof(int) );
+        NSLog( @"Size of int: %zu bytes", sizeof(int) );
         
-        NSLog( @"Size of NSInteger: %zu", sizeof(NSInteger) );
+        NSLog( @"Size of NSInteger: %zu bytes", sizeof(NSInteger) );
         
     }   // end @autoreleasepool
     

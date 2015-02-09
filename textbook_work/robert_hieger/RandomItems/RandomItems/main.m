@@ -107,9 +107,20 @@ int main(int argc, const char * argv[]) {
                           valueInDollars: 3999
                           serialNumber: @"3W2V3Y"];
         
+        // Instantiate array of BNRItems for use in BNRContainer.
+        
+        NSArray *inventoryItems = @[item0, item1,
+                                    item2, item3,
+                                    item4, item5,
+                                    item6, item7,
+                                    item8, item9];
+        
         // Instantiate BNRContainer object to hold above BNRItems.
         
-        BNRContainer *inventory = [ [BNRContainer alloc] init ];
+        BNRContainer *inventory = [ [BNRContainer alloc]
+                                   initWithItemBox: inventoryItems
+                                   nameOfContainer: @"Inventory Items"
+                                   andTotalValue: 10000 ];
         
         NSLog(@"%@", inventory);
         

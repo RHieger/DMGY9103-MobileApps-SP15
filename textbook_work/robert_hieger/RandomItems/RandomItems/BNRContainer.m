@@ -64,16 +64,6 @@
     
     return self;
     
-}
-
-// Override superclass initializer:
-
-- (instancetype) init {
-    
-    return [self initWithItemBox: _itemBox
-                 nameOfContainer: _nameOfContainer
-                   andTotalValue: _totalValue];
-    
-}
+}   // end customized initializer.
 
 @end

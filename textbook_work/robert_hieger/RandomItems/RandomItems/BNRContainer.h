@@ -48,8 +48,4 @@
                  nameOfContainer: (NSString *) nameOfContainer
                    andTotalValue: (int) totalValue;
 
-// Override deisgnated initializer:
-
-- (instancetype) init;
-
 @end

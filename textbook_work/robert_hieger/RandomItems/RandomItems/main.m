@@ -107,14 +107,49 @@ int main(int argc, const char * argv[]) {
                           valueInDollars: 3999
                           serialNumber: @"3W2V3Y"];
         
+        // Create BNRItems for nested BNRContainer:
+        
+        BNRItem *service0 = [ [BNRItem alloc]
+                             initWithItemName: @"WHOOSH! Screen Shine Duo - Screen/Device Cleaner"
+                             valueInDollars: 20
+                             serialNumber: @"4X7U5P" ];
+        
+        BNRItem *service1 = [ [BNRItem alloc]
+                             initWithItemName: @"Moshi TeraGlove Ultimate Cleaning Kit"
+                             valueInDollars: 20
+                             serialNumber: @"4Y4C2Q" ];
+        
+        BNRItem *service2 = [ [BNRItem alloc]
+                             initWithItemName: @"Sanus Elements ELM102 Screen Cleaning Gel"
+                             valueInDollars: 15
+                             serialNumber: @"4S5T2W" ];
+        
+        // Instantiate array of service items for BNRContainer serviceItems
+        
+        NSArray *itemsForService = @[service0, service1, service2];
+        
+        // Sum values of service0, service1 and service 2 to be added to total below:
+        
+        int serviceValue = service0.valueInDollars;
+        serviceValue += service1.valueInDollars;
+        serviceValue += service2.valueInDollars;
+        
+        // Instantiate BNRContainer serviceItems
+        
+        BNRContainer *serviceItems = [ [BNRContainer alloc]
+                                      initWithItemBox: itemsForService
+                                      nameOfContainer:@"Cleaning Kits"
+                                      andTotalValue: serviceValue ];
+
         // Instantiate array of BNRItems for use in BNRContainer.
         
         NSArray *inventoryItems = @[item0, item1,
                                     item2, item3,
                                     item4, item5,
                                     item6, item7,
-                                    item8, item9];
-
+                                    item8, item9,
+                                    serviceItems];
+        
         // Brute force inefficient approach to summing valueInDollars
         // to get value for totalValue in BNRContainer object.
         // Attempted both for and for-in loops to no avail.
@@ -132,8 +167,9 @@ int main(int argc, const char * argv[]) {
         valueForTotal += item7.valueInDollars;
         valueForTotal += item8.valueInDollars;
         valueForTotal += item9.valueInDollars;
+        valueForTotal += serviceValue;
         
-        // Instantiate BNRContainer object to hold above BNRItems.
+        // Instantiate BNRContainer object to hold above BNRItems and one BNRContainer.
         
         BNRContainer *inventory = [ [BNRContainer alloc]
                                    initWithItemBox: inventoryItems

@@ -72,7 +72,7 @@
     
     NSString *descriptionString =
     [ [NSString alloc] initWithFormat:
-       @"%@:\n%@\nTotal Inventory Value: $%d\n",
+       @"%@:\n%@\nTotal Value of Inventory: $%d\n",
        self.nameOfContainer,
        self.itemBox,
        self.totalValue] ;

@@ -66,4 +66,17 @@
     
 }   // end customized initializer.
 
+// Override description method:
+
+- (instancetype) description {
+    
+    NSString *descriptionString =
+    [ [NSString alloc] initWithFormat:
+       @"%@:\n",
+       self.nameOfContainer ];
+    
+    return descriptionString;
+    
+}
+
 @end

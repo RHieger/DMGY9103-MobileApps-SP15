@@ -40,7 +40,7 @@
 
 // Read Only getter
 
-- (float) totalValue;
+- (int) totalValue;
 
 // Custom initializer for BNRContainer:
 

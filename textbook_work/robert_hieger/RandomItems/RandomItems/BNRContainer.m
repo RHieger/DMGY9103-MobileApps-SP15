@@ -34,7 +34,7 @@
     
 }   // end containerName getter
 
-- (float) totalValue {
+- (int) totalValue {
     
     return _totalValue;
     

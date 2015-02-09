@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BNRItem.h"
+#import "BNRContainer.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -106,18 +107,12 @@ int main(int argc, const char * argv[]) {
                           valueInDollars: 3999
                           serialNumber: @"3W2V3Y"];
         
-        // Log items to console:
+        // Instantiate BNRContainer object to hold above BNRItems.
         
-        NSLog(@"%@", item0);
-        NSLog(@"%@", item1);
-        NSLog(@"%@", item2);
-        NSLog(@"%@", item3);
-        NSLog(@"%@", item4);
-        NSLog(@"%@", item5);
-        NSLog(@"%@", item6);
-        NSLog(@"%@", item7);
-        NSLog(@"%@", item8);
-        NSLog(@"%@", item9);
+        BNRContainer *inventory = [ [BNRContainer alloc] init ];
+        
+        NSLog(@"%@", inventory);
+        
         
     }   // end @autoreleasepool
     

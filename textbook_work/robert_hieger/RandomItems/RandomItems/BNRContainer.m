@@ -22,21 +22,57 @@
     
 }   // end itemBox getter
 
-- (void) setContainerName: (NSString *) containerName {
+- (void) setNameOfContainer:(NSString *) nameOfContainer {
     
-    _containerName = containerName;
+    _nameOfContainer = nameOfContainer;
     
 }   // end containerName setter
 
-- (NSString *) containerName {
+- (NSString *) nameOfContainer {
     
-    return _containerName;
+    return _nameOfContainer;
     
 }   // end containerName getter
 
 - (float) totalValue {
     
     return _totalValue;
+    
+}
+
+// Custom initializer for BNRContainer:
+
+- (instancetype) initWithItemBox: (NSArray *) itemBox
+                 nameOfContainer:(NSString *)nameOfContainer
+                 andTotalValue:(int)totalValue {
+    
+    // Call the superclass's designated initializer.
+    
+    self = [super init];
+    
+    // Check if superclass initialized.
+    
+    if (self) {
+        
+        // If superclass initialized, initialize instance variables.
+        
+        _itemBox = itemBox;
+        _nameOfContainer = nameOfContainer;
+        _totalValue = totalValue;
+        
+    }   // end if
+    
+    return self;
+    
+}
+
+// Override superclass initializer:
+
+- (instancetype) init {
+    
+    return [self initWithItemBox: _itemBox
+                 nameOfContainer: _nameOfContainer
+                   andTotalValue: _totalValue];
     
 }
 

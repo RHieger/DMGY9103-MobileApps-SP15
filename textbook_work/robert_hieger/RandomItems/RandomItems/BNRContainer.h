@@ -15,8 +15,8 @@
 {
     
     NSArray *_itemBox;
-    NSString *_containerName;
-    float _totalValue;
+    NSString *_nameOfContainer;
+    int _totalValue;
     
 }
 
@@ -30,16 +30,26 @@
 
 - (NSArray *) itemBox;
 
-// _containerName setter
+// _nameOfContainer setter
 
-- (void) setContainerName: (NSString *) containerNname;
+- (void) setNameOfContainer: (NSString *) nameOfContainer;
 
-// _containerName getter
+// _nameOfContainer getter
 
-- (NSString *) containerName;
+- (NSString *) nameOfContainer;
 
 // Read Only getter
 
 - (float) totalValue;
+
+// Custom initializer for BNRContainer:
+
+- (instancetype) initWithItemBox: (NSArray *) itemBox
+                 nameOfContainer: (NSString *) nameOfContainer
+                   andTotalValue: (int) totalValue;
+
+// Override deisgnated initializer:
+
+- (instancetype) init;
 
 @end

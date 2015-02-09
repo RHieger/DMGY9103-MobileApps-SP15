@@ -68,12 +68,14 @@
 
 // Override description method:
 
-- (instancetype) description {
+- (NSString *) description {
     
     NSString *descriptionString =
     [ [NSString alloc] initWithFormat:
-       @"%@:\n",
-       self.nameOfContainer ];
+       @"%@:\n%@\nTotal Inventory Value: $%d\n",
+       self.nameOfContainer,
+       self.itemBox,
+       self.totalValue] ;
     
     return descriptionString;
     

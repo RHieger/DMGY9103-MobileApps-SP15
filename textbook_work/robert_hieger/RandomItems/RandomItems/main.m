@@ -114,13 +114,31 @@ int main(int argc, const char * argv[]) {
                                     item4, item5,
                                     item6, item7,
                                     item8, item9];
+
+        // Brute force inefficient approach to summing valueInDollars
+        // to get value for totalValue in BNRContainer object.
+        // Attempted both for and for-in loops to no avail.
+        // Could not figure out how to iterate through BNRItem
+        // object valueInDollars instance variable within
+        // BNRContainer and add them to sum for totalValue.
+        
+        int valueForTotal = item0.valueInDollars;
+        valueForTotal += item1.valueInDollars;
+        valueForTotal += item2.valueInDollars;
+        valueForTotal += item3.valueInDollars;
+        valueForTotal += item4.valueInDollars;
+        valueForTotal += item5.valueInDollars;
+        valueForTotal += item6.valueInDollars;
+        valueForTotal += item7.valueInDollars;
+        valueForTotal += item8.valueInDollars;
+        valueForTotal += item9.valueInDollars;
         
         // Instantiate BNRContainer object to hold above BNRItems.
         
         BNRContainer *inventory = [ [BNRContainer alloc]
                                    initWithItemBox: inventoryItems
                                    nameOfContainer: @"Inventory Items"
-                                   andTotalValue: 10000 ];
+                                   andTotalValue: valueForTotal ];
         
         NSLog(@"%@", inventory);
         

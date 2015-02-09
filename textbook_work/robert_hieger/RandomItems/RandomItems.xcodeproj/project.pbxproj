@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C56755A41A7C86D60033F1B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C56755A31A7C86D60033F1B8 /* main.m */; };
+		C5FA06F91A872B4300792D38 /* BNRContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA06F81A872B4300792D38 /* BNRContainer.m */; };
 		C5FBE04E1A7C98E700044BA6 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FBE04D1A7C98E700044BA6 /* BNRItem.m */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		C56755A01A7C86D60033F1B8 /* RandomItems */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RandomItems; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56755A31A7C86D60033F1B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C5FA06F71A872B4300792D38 /* BNRContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRContainer.h; sourceTree = "<group>"; };
+		C5FA06F81A872B4300792D38 /* BNRContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRContainer.m; sourceTree = "<group>"; };
 		C5FBE04C1A7C98E700044BA6 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		C5FBE04D1A7C98E700044BA6 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				C56755A31A7C86D60033F1B8 /* main.m */,
+				C5FA06F71A872B4300792D38 /* BNRContainer.h */,
+				C5FA06F81A872B4300792D38 /* BNRContainer.m */,
 				C5FBE04C1A7C98E700044BA6 /* BNRItem.h */,
 				C5FBE04D1A7C98E700044BA6 /* BNRItem.m */,
 			);
@@ -125,6 +130,7 @@
 			files = (
 				C56755A41A7C86D60033F1B8 /* main.m in Sources */,
 				C5FBE04E1A7C98E700044BA6 /* BNRItem.m in Sources */,
+				C5FA06F91A872B4300792D38 /* BNRContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

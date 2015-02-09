@@ -54,6 +54,71 @@ int main(int argc, const char * argv[]) {
         
         items = nil;
         
+        // Instantiate 10 BNRItems for use of BNRContainer.
+        
+        BNRItem *item0 = [ [BNRItem alloc]
+                           initWithItemName: @"11\" MacBook Air: 128GB"
+                             valueInDollars: 899
+                               serialNumber: @"0F3Q4C"];
+        
+        BNRItem *item1 = [ [BNRItem alloc]
+                          initWithItemName: @"11\" MacBook Air: 256GB"
+                          valueInDollars: 1099
+                          serialNumber: @"0C4X3M"];
+        
+        BNRItem *item2 = [ [BNRItem alloc]
+                          initWithItemName: @"13\" MacBook Air: 128GB"
+                          valueInDollars: 999
+                          serialNumber: @"0F9T4Q"];
+        
+        BNRItem *item3 = [ [BNRItem alloc]
+                          initWithItemName: @"13\" MacBook Air: 256GB"
+                          valueInDollars: 1199
+                          serialNumber: @"0F9T4Q"];
+        
+        BNRItem *item4 = [ [BNRItem alloc]
+                          initWithItemName: @"13\" MacBook Pro: 2.5GHz 4GB"
+                          valueInDollars: 1099
+                          serialNumber: @"1X5U2P"];
+        
+        BNRItem *item5 = [ [BNRItem alloc]
+                          initWithItemName: @"13\" MacBook Pro: 2.5GHz 4GB"
+                          valueInDollars: 1099
+                          serialNumber: @"1X5U2P"];
+        
+        BNRItem *item6 = [ [BNRItem alloc]
+                          initWithItemName: @"13\" MacBook Pro Retina: 2.6GHz 8GB"
+                          valueInDollars: 1299
+                          serialNumber: @"2M7C8R"];
+        
+        BNRItem *item7 = [ [BNRItem alloc]
+                          initWithItemName: @"15\" MacBook Pro Retina: 2.5GHz 16GB"
+                          valueInDollars: 2499
+                          serialNumber: @"2S9D4V"];
+        
+        BNRItem *item8 = [ [BNRItem alloc]
+                          initWithItemName: @"27\" iMac Retina 5K: 3.5GHz 8GB"
+                          valueInDollars: 2499
+                          serialNumber: @"2S9D4V"];
+        
+        BNRItem *item9 = [ [BNRItem alloc]
+                          initWithItemName: @"Mac Pro 6 Core Dual GPU: 3.5GHz 16GB"
+                          valueInDollars: 3999
+                          serialNumber: @"3W2V3Y"];
+        
+        // Log items to console:
+        
+        NSLog(@"%@", item0);
+        NSLog(@"%@", item1);
+        NSLog(@"%@", item2);
+        NSLog(@"%@", item3);
+        NSLog(@"%@", item4);
+        NSLog(@"%@", item5);
+        NSLog(@"%@", item6);
+        NSLog(@"%@", item7);
+        NSLog(@"%@", item8);
+        NSLog(@"%@", item9);
+        
     }   // end @autoreleasepool
     
     return 0;

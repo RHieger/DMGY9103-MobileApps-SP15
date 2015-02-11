@@ -53,7 +53,18 @@
                                           serialNumber: randomSerialNumber ];
     
     return newItem;
-}
+    
+}   // end randomItem
+
+- (void) setContainedItem: (BNRItem *) containedItem {
+    
+    // Override containedItem setter method.
+    
+    // Point container to containedItem and vice versa.
+    
+    self.containedItem.container = self;
+    
+}   // end - (void) setContainedItem:
 
 - (instancetype) initWithItemName: (NSString *) name
                    valueInDollars:(int) value
@@ -134,75 +145,5 @@
     return descriptionString;
     
 }   // end description (override of superclass method)
-
-- (void) setItemName:(NSString *)str {
-    
-    _itemName = str;
-    
-}   // end setItemName
-
-- (NSString *) itemName {
-    
-    return _itemName;
-    
-}   // end itemName
-
-- (void) setSerialNumber: (NSString *) str {
-    
-    _serialNumber = str;
-    
-}   // end setSerialNumber
-
-- (NSString *) serialNumber {
-    
-    return _serialNumber;
-    
-}   // end serialNumber
-
-- (void) setValueInDollars:(int) v {
-    
-    _valueInDollars = v;
-    
-}   // end setValueInDollars
-
-- (int) valueInDollars {
-    
-    return _valueInDollars;
-    
-}   // end valueInDollars
-
-- (void) setContainedItem: (BNRItem *) item {
-    
-    _containedItem = item;
-    
-    // When given an item to contain, the contained item
-    // will be given a pointer to its container.
-    
-    item.container = self;
-    
-}   // end setContainedItem
-
-- (BNRItem *) containedItem {
-    
-    return _containedItem;
-    
-}   // end containedItem
-
-- (void) setContainer: (BNRItem *) item {
-    
-    _container = item;
-    
-}
-
-- (BNRItem *) container {
-    
-    return _container;
-    
-}
-
-- (NSDate *) dateCreated {
-    
-    return _dateCreated;
-}
 
 @end

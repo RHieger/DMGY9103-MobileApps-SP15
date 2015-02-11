@@ -8,41 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BNRItem : NSObject {
+@interface BNRItem : NSObject
 
-    // Instance variables (ivars) for BNRItem:
-    
-    NSString *_itemName;
-    NSString *_serialNumber;
-    int _valueInDollars;
-    NSDate *_dateCreated;
-    
-    BNRItem *_containedItem;
-    __weak BNRItem *_container;
-    
-}
+@property (nonatomic, strong) BNRItem *containedItem;
+@property (nonatomic, weak) BNRItem *container;
 
-// Instance methods for BNRItem:
-
-- (void) setItemName: (NSString *) str;         // setter
-- (NSString *) itemName;                        // getter
-
-- (void) setSerialNumber: (NSString *) str;     // setter
-- (NSString *) serialNumber;                    // getter
-
-- (void) setValueInDollars: (int) v;            // setter
-- (int) valueInDollars;                         // getter
-
-- (void) setContainedItem: (BNRItem *) item;    // setter
-- (BNRItem *) containedItem;                    // getter
-
-- (void) setContainer: (BNRItem *) item;        // setter
-- (BNRItem *) container;                        // getter
-
-// As _dateCreated should be a read only variable,
-// only the getter method is necessary.
-
-- (NSDate *) dateCreated;
+@property (nonatomic, copy) NSString *itemName;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) int valueInDollars;
+@property (nonatomic, readonly) NSDate *dateCreated;
 
 // Class method for BNRItem:
 

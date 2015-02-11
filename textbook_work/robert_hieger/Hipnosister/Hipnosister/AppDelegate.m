@@ -20,9 +20,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // Create C Rectangle struct.
+    // Create C Rectangle struct filling bounds of the parent window.
     
-    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+    CGRect firstFrame = self.window.bounds;
     
     // Instantiate BNRHypnosisView Object for firstFrame.
     
@@ -36,23 +36,6 @@
     // Add firstView to parent window.
     
     [self.window addSubview: firstView];
-    
-    // Create another C Rectangle struct.
-    
-    CGRect secondFrame = CGRectMake(20, 30, 50, 50);
-    
-    // Instantiate BNRHpynosisView Object for secondFrame.
-    
-    BNRHypnosisView *secondView = [ [BNRHypnosisView alloc]
-                                     initWithFrame: secondFrame];
-    
-    // Set rectangle color to blue.
-    
-    secondView.backgroundColor = [UIColor blueColor];
-    
-    // Add secondView to parent window.
-    
-    [firstView addSubview: secondView];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

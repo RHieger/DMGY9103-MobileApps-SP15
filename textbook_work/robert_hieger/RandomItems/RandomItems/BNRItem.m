@@ -113,6 +113,14 @@
     
 }   // end init
 
+// Override dealloc method.
+
+- (void) dealloc {
+    
+    NSLog(@"Destroyed: %@", self);
+    
+}   // end dealloc
+
 - (NSString *) description {
     
     NSString *descriptionString =
@@ -162,6 +170,35 @@
     return _valueInDollars;
     
 }   // end valueInDollars
+
+- (void) setContainedItem: (BNRItem *) item {
+    
+    _containedItem = item;
+    
+    // When given an item to contain, the contained item
+    // will be given a pointer to its container.
+    
+    item.container = self;
+    
+}   // end setContainedItem
+
+- (BNRItem *) containedItem {
+    
+    return _containedItem;
+    
+}   // end containedItem
+
+- (void) setContainer: (BNRItem *) item {
+    
+    _container = item;
+    
+}
+
+- (BNRItem *) container {
+    
+    return _container;
+    
+}
 
 - (NSDate *) dateCreated {
     

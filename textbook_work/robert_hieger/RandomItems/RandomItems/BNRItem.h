@@ -17,6 +17,9 @@
     int _valueInDollars;
     NSDate *_dateCreated;
     
+    BNRItem *_containedItem;
+    BNRItem *_container;
+    
 }
 
 // Instance methods for BNRItem:
@@ -29,6 +32,12 @@
 
 - (void) setValueInDollars: (int) v;            // setter
 - (int) valueInDollars;                         // getter
+
+- (void) setContainedItem: (BNRItem *) item;    // setter
+- (BNRItem *) containedItem;                    // getter
+
+- (void) setContainer: (BNRItem *) item;        // setter
+- (BNRItem *) container;                        // getter
 
 // As _dateCreated should be a read only variable,
 // only the getter method is necessary.
@@ -49,6 +58,5 @@
 
 - (instancetype) initWithName: (NSString *) name
               AndSerialNumber: (NSString *) serialNumber;
-
 
 @end

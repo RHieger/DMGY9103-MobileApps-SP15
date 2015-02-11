@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BNRHypnosisView.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Create C Rectangle struct.
+    
+    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+    
+    // Instantiate BNRHypnosisView Object for firstFrame.
+    
+    BNRHypnosisView *firstView = [ [BNRHypnosisView alloc]
+                                    initWithFrame: firstFrame];
+    
+    // Set rectangle color to red.
+    
+    firstView.backgroundColor = [UIColor redColor];
+    
+    // Add firstView to parent window.
+    
+    [self.window addSubview: firstView];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

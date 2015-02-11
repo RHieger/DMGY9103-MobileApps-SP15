@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5058BE91A8C07F5008DC915 /* BNRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5058BE81A8C07F5008DC915 /* BNRHypnosisView.m */; };
 		C51C5CE41A8B0F88005CA49A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C5CE31A8B0F88005CA49A /* main.m */; };
 		C51C5CE71A8B0F88005CA49A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C5CE61A8B0F88005CA49A /* AppDelegate.m */; };
 		C51C5CEF1A8B0F88005CA49A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51C5CEE1A8B0F88005CA49A /* Images.xcassets */; };
@@ -25,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5058BE71A8C07F5008DC915 /* BNRHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRHypnosisView.h; sourceTree = "<group>"; };
+		C5058BE81A8C07F5008DC915 /* BNRHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRHypnosisView.m; sourceTree = "<group>"; };
 		C51C5CDE1A8B0F88005CA49A /* Hipnosister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hipnosister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51C5CE21A8B0F88005CA49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C51C5CE31A8B0F88005CA49A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 		C51C5CD51A8B0F88005CA49A = {
 			isa = PBXGroup;
 			children = (
+				C5058BE71A8C07F5008DC915 /* BNRHypnosisView.h */,
+				C5058BE81A8C07F5008DC915 /* BNRHypnosisView.m */,
 				C51C5CE01A8B0F88005CA49A /* Hipnosister */,
 				C51C5CFA1A8B0F88005CA49A /* HipnosisterTests */,
 				C51C5CDF1A8B0F88005CA49A /* Products */,
@@ -212,6 +217,7 @@
 			files = (
 				C51C5CE71A8B0F88005CA49A /* AppDelegate.m in Sources */,
 				C51C5CE41A8B0F88005CA49A /* main.m in Sources */,
+				C5058BE91A8C07F5008DC915 /* BNRHypnosisView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +400,7 @@
 				C51C5D031A8B0F88005CA49A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C51C5D041A8B0F88005CA49A /* Build configuration list for PBXNativeTarget "HipnosisterTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +409,7 @@
 				C51C5D061A8B0F88005CA49A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

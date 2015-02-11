@@ -47,10 +47,9 @@ int main(int argc, const char * argv[]) {
             
             NSLog(@"%@", item);
             
-            NSLog(@"Setting items to nil...");
-            
-            
         }   // end for (BNRItem *item in items)
+        
+        NSLog(@"Setting items to nil...");
         
         items = nil;
         

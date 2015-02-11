@@ -37,6 +37,23 @@
     
     [self.window addSubview: firstView];
     
+    // Create another C Rectangle struct.
+    
+    CGRect secondFrame = CGRectMake(20, 30, 50, 50);
+    
+    // Instantiate BNRHpynosisView Object for secondFrame.
+    
+    BNRHypnosisView *secondView = [ [BNRHypnosisView alloc]
+                                     initWithFrame: secondFrame];
+    
+    // Set rectangle color to blue.
+    
+    secondView.backgroundColor = [UIColor blueColor];
+    
+    // Add secondView to parent window.
+    
+    [firstView addSubview: secondView];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

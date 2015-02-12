@@ -29,10 +29,6 @@
     BNRHypnosisView *firstView = [ [BNRHypnosisView alloc]
                                     initWithFrame: firstFrame];
     
-    // Set rectangle color to red.
-    
-    firstView.backgroundColor = [UIColor redColor];
-    
     // Add firstView to parent window.
     
     [self.window addSubview: firstView];

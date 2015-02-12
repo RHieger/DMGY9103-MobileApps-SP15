@@ -33,7 +33,7 @@
     // The circle will be the largest that will fit in the view
     // (portrait or landscape).
     
-    float radius = MIN(bounds.size.width, bounds.size.height);
+    float radius = MIN(bounds.size.width, bounds.size.height) / 2.0;
     
     // Instantiate UIBezierPath Object in order to draw circle.
     

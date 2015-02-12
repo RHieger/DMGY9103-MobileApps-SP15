@@ -48,6 +48,10 @@
                   endAngle: M_PI * 2.0
                  clockwise: YES];
     
+    // Configure lineWidth to 10 points.
+    
+    path.lineWidth = 10;
+    
     // Draw the circumference of the circle.
     
     [path stroke];

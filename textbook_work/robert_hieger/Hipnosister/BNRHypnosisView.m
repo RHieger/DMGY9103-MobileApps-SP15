@@ -52,6 +52,10 @@
     
     path.lineWidth = 10;
     
+    // Configure the drawing color to light gray.
+    
+    [ [UIColor lightGrayColor] setStroke ];
+    
     // Draw the circumference of the circle.
     
     [path stroke];

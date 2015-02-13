@@ -62,4 +62,12 @@
     
 }   // end - (void) drawRect: (CGRect) rect
 
+// Override initWithFrame.
+
+- (instancetype) initWithFrame:(CGRect)frame {
+    
+    self = [super initWithFrame:<#frame#>];
+    
+}
+
 @end

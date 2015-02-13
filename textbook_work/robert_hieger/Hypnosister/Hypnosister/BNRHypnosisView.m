@@ -47,6 +47,13 @@
     for (float currentRadius = maxRadius; currentRadius > 0;
          currentRadius -= 20) {
         
+        // Make certain to advance path to beginning of each
+        // concentric circle so that one continuous line does
+        // not intersect all circles.
+        
+        [path moveToPoint: CGPointMake(center.x + currentRadius,
+                                       center.y)];
+        
         [path addArcWithCenter: center
                         // Note this is currentRadius!
                         radius: currentRadius

@@ -33,23 +33,29 @@
     
     center.y = bounds.origin.y + bounds.size.height / 2.0;
     
-    // The circle will be the largest that can fit in the view.
+    // The largest circle will circumscribe the view.
     
-    float radius = MIN(bounds.size.width, bounds.size.height) / 2.0;
+    float maxRadius = hypot(bounds.size.width, bounds.size.height) / 2.0;
     
     // Instantiate UIBezierPath object to be used in the creation
     // of a circle.
     
     UIBezierPath *path = [ [UIBezierPath alloc] init ];
     
-    // Add an arc to the path at center, with radius of radius,
-    // with 0 to 2 * PI radians (circle).
+    // Create concentric circles.
     
-    [path addArcWithCenter: center
-                    radius: radius
-                startAngle: 0.0
-                  endAngle: M_PI * 2.0
-                 clockwise: YES];
+    for (float currentRadius = maxRadius; currentRadius > 0;
+         currentRadius -= 20) {
+        
+        [path addArcWithCenter: center
+                        // Note this is currentRadius!
+                        radius: currentRadius
+                    startAngle: 0.0
+                      endAngle: M_PI * 2.0
+                     clockwise: YES];
+        
+    }   // end for
+    
     
     // Configure line width to 10 points.
     
@@ -59,7 +65,7 @@
     
     [ [UIColor lightGrayColor] setStroke ];
     
-    // Draw the circumference of the circle.
+    // Draw the concentric circles.
     
     [path stroke];
     

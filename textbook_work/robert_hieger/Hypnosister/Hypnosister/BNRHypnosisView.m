@@ -52,7 +52,7 @@
         // not intersect all circles.
         
         [path moveToPoint: CGPointMake(center.x + currentRadius,
-                                       center.y)];
+                                       center.y)]; 
         
         [path addArcWithCenter: center
                         // Note this is currentRadius!
@@ -75,6 +75,14 @@
     // Draw the concentric circles.
     
     [path stroke];
+    
+    // Instantiate a UIImage to contain the logo.png.
+    
+    UIImage *logoImage = [UIImage imageNamed: @"logo.png"];
+    
+    // Draw the image within the CGRect bounds.
+    
+    [logoImage drawInRect: bounds];
     
     
 }   // end - (void) drawRect: (CGRect) rect

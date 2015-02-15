@@ -80,9 +80,17 @@
     
     UIImage *logoImage = [UIImage imageNamed: @"logo.png"];
     
-    // Draw the image within the CGRect bounds.
+    // Declare a CGRect for the logo to be superimposed over
+    // the CGRect bounds. The parameters below set the
     
-    [logoImage drawInRect: bounds];
+    CGRect logoRectangle = CGRectMake(bounds.size.width / 4,
+                                      bounds.size.height / 4,
+                                      bounds.size.width /2,
+                                      bounds.size.height /2);
+    
+    // Draw the logo within the rectangle defined above.
+    
+    [logoImage drawInRect: logoRectangle];
     
     
 }   // end - (void) drawRect: (CGRect) rect

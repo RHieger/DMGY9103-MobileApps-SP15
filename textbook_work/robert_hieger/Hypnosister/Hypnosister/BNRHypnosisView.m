@@ -8,6 +8,12 @@
 
 #import "BNRHypnosisView.h"
 
+@interface BNRHypnosisView ()
+
+@property (strong, nonatomic) UIColor *circleColor;
+
+@end
+
 @implementation BNRHypnosisView
 
 // Override drawRect to implement customized drawing of
@@ -70,7 +76,7 @@
     
     // Configure the drawing color to light gray.
     
-    [ [UIColor lightGrayColor] setStroke ];
+    [self.circleColor setStroke];
     
     // Draw the concentric circles.
     
@@ -123,6 +129,10 @@
         // All BNRHypnosisViews start with a clear background color.
         
         self.backgroundColor = [UIColor clearColor];
+        
+        // Default circle color
+        
+        self.circleColor = [UIColor lightGrayColor];
         
     }
     

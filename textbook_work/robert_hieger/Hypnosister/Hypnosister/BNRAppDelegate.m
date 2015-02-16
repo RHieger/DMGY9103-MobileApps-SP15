@@ -39,7 +39,6 @@
     // multiple of 2.0.
     
     bigRect.size.width *= 2.0;
-    bigRect.size.height *= 2.0;
     
     // Create a screen-sized scrollView and add it to the window.
     
@@ -48,15 +47,28 @@
     
     [self.window addSubview: scrollView];
     
-    // Create a super sized BNRHypnosisView and add it to
-    // scrollView.
+    // Create a screen-sized hypnosisView and add it to scrollView.
     
     BNRHypnosisView *hypnosisView = [ [BNRHypnosisView alloc]
-                                      initWithFrame: bigRect];
+                                       initWithFrame: screenRect ];
     
     // Now add hypnosisView as subView to scrollView.
     
     [scrollView addSubview: hypnosisView];
+    
+    // Add a second screen-sized hypnosis view to scrollView
+    // just off screen to the right.
+    
+    // Adjust starting point of new hypnosis view.
+    
+    screenRect.origin.x += screenRect.size.width;
+    
+    BNRHypnosisView *anotherView = [ [BNRHypnosisView alloc]
+                                      initWithFrame: screenRect];
+    
+    // Add anotherView to scrollView.
+    
+    [scrollView addSubview: anotherView];
     
     // Tell the scrollView how big its content area is.
     

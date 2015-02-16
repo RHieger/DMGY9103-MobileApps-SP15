@@ -167,4 +167,16 @@
     
 }   // end - (void) touchesBegan: (NSNet *) touches withEvent (UIEvent *) event
 
+// Declare custom accessor method for circleColor In order to update color.
+
+- (void) setCircleColor: (UIColor *) circleColor {
+    
+    _circleColor = circleColor;
+    
+    // Send self message to update display.
+    
+    [self setNeedsDisplay];
+    
+}   // end - (void) setCircleColor: (UIColor *) circleColor
+
 @end

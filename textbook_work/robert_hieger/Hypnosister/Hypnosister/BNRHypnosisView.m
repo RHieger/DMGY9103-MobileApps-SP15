@@ -76,6 +76,12 @@
     
     [path stroke];
     
+    // Save the current graphic context state.
+    
+    CGContextRef shadow = UIGraphicsGetCurrentContext();
+    
+    CGContextSetShadow(shadow, CGSizeMake(10.0, 3.0), 1.0 );
+    
     // Instantiate a UIImage to contain the logo.png.
     
     UIImage *logoImage = [UIImage imageNamed: @"logo.png"];
@@ -91,6 +97,10 @@
     // Draw the logo within the rectangle defined above.
     
     [logoImage drawInRect: logoRectangle];
+    
+    // Release Shadow
+    
+    //CGContextRestoreGState(shadow);
     
     
 }   // end - (void) drawRect: (CGRect) rect

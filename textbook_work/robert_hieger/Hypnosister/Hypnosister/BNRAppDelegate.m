@@ -19,22 +19,48 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]
-                   initWithFrame:[[UIScreen mainScreen] bounds]];
+                   initWithFrame:[ [UIScreen mainScreen] bounds] ];
     
-    CGRect firstFrame = self.window.bounds;
+    /****************************************************
+     *                                                  *
+     * Create UIView Heirarchy to support UIScrollView  *
+     *                                                  *
+     ****************************************************
+    */
     
-    // Instantiate BNRHypnosis View Object to create frame into
-    // which firstView view may be placed.
+    // Create CGRects for frames.
     
-    BNRHypnosisView *firstView = [ [BNRHypnosisView alloc]
-                                 initWithFrame: firstFrame];
+    CGRect screenRect = self.window.bounds;
+    CGRect bigRect = screenRect;
     
+    // Set width and height for bigRect.
+    // NOTE: bigRect increases the size of whatever it
+    // contains, in this case, BNRHypnosisView, by a
+    // multiple of 2.0.
     
-    // Add firstView view, which contains C struct of CGRect
-    // firstFrame, to make it a subview of the window
-    // (parent object).
+    bigRect.size.width *= 2.0;
+    bigRect.size.height *= 2.0;
     
-    [self.window addSubview: firstView];
+    // Create a screen-sized scrollView and add it to the window.
+    
+    UIScrollView *scrollView = [ [UIScrollView alloc]
+                                 initWithFrame: screenRect];
+    
+    [self.window addSubview: scrollView];
+    
+    // Create a super sized BNRHypnosisView and add it to
+    // scrollView.
+    
+    BNRHypnosisView *hypnosisView = [ [BNRHypnosisView alloc]
+                                      initWithFrame: bigRect];
+    
+    // Now add hypnosisView as subView to scrollView.
+    
+    [scrollView addSubview: hypnosisView];
+    
+    // Tell the scrollView how big its content area is.
+    
+    scrollView.contentSize = bigRect.size;
     
     self.window.backgroundColor = [UIColor whiteColor];
     

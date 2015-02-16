@@ -66,6 +66,11 @@
     BNRHypnosisView *anotherView = [ [BNRHypnosisView alloc]
                                       initWithFrame: screenRect];
     
+    // Enable horizontal paging that will snap to one view or the
+    // other as user swipes to the left or right.
+    
+    scrollView.pagingEnabled = YES;
+    
     // Add anotherView to scrollView.
     
     [scrollView addSubview: anotherView];

@@ -42,6 +42,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Override - (instancetype) initWithNibName: (NSString *) nibNameOrNil
+//                           bundle: (NSBundle *) bundleOrNil
+
+- (instancetype) initWithNibName:(NSString *)nibNameOrNil
+                          bundle:(NSBundle *)nibBundleOrNil {
+    
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil ];
+    
+    if (self) {
+        
+        // Set the tabBarItem's title.
+        
+        self.tabBarItem.title = @"Hypnotize";
+        
+        // Create a UIImage from a file. This will use
+        // Hypno@2x.png on retina display devices.
+        
+        // First instantiate UIImage object.
+        
+        UIImage *image = [UIImage imageNamed: @"Hypno.png"];
+        
+        // Now put the image on the tabBarItem.
+        
+        self.tabBarItem.image = image;
+        
+    }   // end if
+    
+    return self;
+    
+}   // end initWithNibName: (NSString *) nibNameOrNil
+    //              bundle: (NSBundle *) nibBundleOrNil
+
 /*
 #pragma mark - Navigation
 

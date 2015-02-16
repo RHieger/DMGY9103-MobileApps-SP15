@@ -140,4 +140,31 @@
     
 }   // end - (instancetype) initWithFrame (CGRect) frame
 
+// When a finger touches the screen...
+
+- (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *)event {
+    
+    // Log touch event to console.
+    
+    NSLog(@"%@ was touched.\n", self);
+    
+    // Get three random numbers between 0 and 1.
+    
+    float red = ( arc4random() % 100 / 100.0 );     // Red component of UIColor
+    float green = ( arc4random() % 100 / 100.0 );   // Green component of UIColor
+    float blue = ( arc4random() % 100 / 100.0 );    // Blue component of UIColor
+    
+    // Set pointer to the random color.
+    
+    UIColor *randomColor = [UIColor colorWithRed: red
+                                           green: green
+                                            blue: blue
+                                           alpha: 1.0];
+    
+    // Set the random color.
+    
+    self.circleColor = randomColor;
+    
+}   // end - (void) touchesBegan: (NSNet *) touches withEvent (UIEvent *) event
+
 @end

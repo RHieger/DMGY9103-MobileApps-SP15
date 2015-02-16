@@ -22,6 +22,19 @@
     
     NSLog(@"Setting a reminder for %@", date);
     
+    // Instantiate UILocalNotification object to give reminder.
+    
+    UILocalNotification *note = [ [UILocalNotification alloc] init ];
+    
+    // Set note properties.
+    
+    note.alertBody = @"Hypnotize me!";
+    note.fireDate = date;
+    
+    // Send the alert to the shared application.
+    
+    [ [UIApplication sharedApplication] scheduleLocalNotification: note ];
+    
 }
 
 // Override - (instancetype) initWithNibName: (NSString *) nibNameOrNil

@@ -17,7 +17,19 @@
 @implementation BNRAppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)          application: (UIApplication *) application
+didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
+    
+    // Necessary code to allow LocalNotifications.
+    // Thanks to Matias!
+    
+    [ application registerUserNotificationSettings:
+      [UIUserNotificationSettings
+       settingsForTypes: UIUserNotificationTypeAlert |
+                         UIUserNotificationTypeBadge |
+                         UIUserNotificationTypeSound
+       categories: nil] ];
+    
     
     self.window = [ [UIWindow alloc]
                     initWithFrame: [ [UIScreen mainScreen] bounds] ];
@@ -27,18 +39,9 @@
     BNRHypnosisViewController *hvc =
     [ [BNRHypnosisViewController alloc] init];
     
-    // This will get a pointer to an object that represents the app bundle.
-    
-    NSBundle *appBundle = [NSBundle mainBundle];
-    
-    // Look in the app bundle for the file BNRReminderViewController.xib.
-    // This is done at the same time the BNRReminderViewController object
-    // is instantiated.
-    
     BNRReminderViewController *rvc =
-    [ [BNRReminderViewController alloc]
-      initWithNibName: @"BNRReminderViewController"
-               bundle: appBundle];
+    [ [BNRReminderViewController alloc] init ];
+    
     
     UITabBarController *tabBarController =
     [ [UITabBarController alloc] init ];

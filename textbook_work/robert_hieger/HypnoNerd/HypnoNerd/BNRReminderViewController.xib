@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRReminderViewController">
+            <connections>
+                <outlet property="view" destination="r6w-qX-0C5" id="g8T-Wk-4L7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="r6w-qX-0C5">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0E4-ie-BN6">
+                    <rect key="frame" x="0.0" y="83" width="320" height="162"/>
+                    <date key="date" timeIntervalSinceReferenceDate="445768977.47511601">
+                        <!--2015-02-16 08:42:57 +0000-->
+                    </date>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpq-K1-J21">
+                    <rect key="frame" x="19" y="381" width="282" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hpq-K1-J21" firstAttribute="leading" secondItem="r6w-qX-0C5" secondAttribute="leading" constant="19" id="0AM-pX-DgS"/>
+                <constraint firstItem="0E4-ie-BN6" firstAttribute="leading" secondItem="r6w-qX-0C5" secondAttribute="leading" id="0hW-iB-9tV"/>
+                <constraint firstItem="0E4-ie-BN6" firstAttribute="centerX" secondItem="hpq-K1-J21" secondAttribute="centerX" id="Dfd-79-ESY"/>
+                <constraint firstAttribute="bottom" secondItem="hpq-K1-J21" secondAttribute="bottom" constant="157" id="Nbz-Ha-iHV"/>
+                <constraint firstAttribute="centerX" secondItem="0E4-ie-BN6" secondAttribute="centerX" id="la7-bJ-bdQ"/>
+                <constraint firstItem="0E4-ie-BN6" firstAttribute="top" secondItem="r6w-qX-0C5" secondAttribute="top" constant="83" id="qcK-3O-fPO"/>
+            </constraints>
+            <point key="canvasLocation" x="348" y="139"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

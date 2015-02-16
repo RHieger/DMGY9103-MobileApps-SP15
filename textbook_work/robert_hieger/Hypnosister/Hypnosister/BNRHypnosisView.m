@@ -100,6 +100,13 @@
     
     // Release Shadow
     
+    // My Understanding is that after invoking the shadow,
+    // the state of the context needs to be restored. However,
+    // the following commented out line of code throws the runtime
+    // error "Thread 1: signal SIGABRT." Not sure how to resolve
+    // this problem or if indeed CGContextRestoreGState is the
+    // right function, though it seems to be.
+    
     //CGContextRestoreGState(shadow);
     
     

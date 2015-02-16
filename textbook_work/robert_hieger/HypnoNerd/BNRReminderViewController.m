@@ -70,6 +70,18 @@
     return self;
     
 }   // end initWithNibName: (NSString *) nibNameOrNil
-//                           bundle: (NSBundle *) bundleOrNil
+    //              bundle: (NSBundle *) bundleOrNil
+
+// Override viewDidLoad.
+
+- (void) viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    // Log load to console.
+    
+    NSLog(@"BNRReminderViewController loaded its view.\n");
+    
+}   // end loadView
 
 @end

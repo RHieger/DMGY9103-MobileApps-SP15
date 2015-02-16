@@ -33,8 +33,12 @@
 }   // end loadView
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
+    
+    NSLog(@"BNRHypnosisViewController loaded its view.\n");
 }
 
 - (void)didReceiveMemoryWarning {

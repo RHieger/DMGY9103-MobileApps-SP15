@@ -16,6 +16,8 @@
 		C585F0F41A91D2E200F08AB7 /* BNRHypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C585F0F31A91D2E200F08AB7 /* BNRHypnosisViewController.m */; };
 		C585F0FA1A91D9C200F08AB7 /* BNRReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C585F0F91A91D9C200F08AB7 /* BNRReminderViewController.m */; };
 		C585F1021A91E37A00F08AB7 /* BNRReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C585F1011A91E37A00F08AB7 /* BNRReminderViewController.xib */; };
+		C585F1121A92D27900F08AB7 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C585F1111A92D27900F08AB7 /* QuizViewController.xib */; };
+		C5E82A881A92E45B0053873A /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C585F10F1A92D24200F08AB7 /* QuizViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,9 @@
 		C585F0F81A91D9C200F08AB7 /* BNRReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRReminderViewController.h; path = ../BNRReminderViewController.h; sourceTree = "<group>"; };
 		C585F0F91A91D9C200F08AB7 /* BNRReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRReminderViewController.m; path = ../BNRReminderViewController.m; sourceTree = "<group>"; };
 		C585F1011A91E37A00F08AB7 /* BNRReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRReminderViewController.xib; sourceTree = "<group>"; };
+		C585F10E1A92D24200F08AB7 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
+		C585F10F1A92D24200F08AB7 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		C585F1111A92D27900F08AB7 /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +100,12 @@
 				C585F0EA1A91CDFE00F08AB7 /* BNRHypnosisView.m */,
 				C585F0F81A91D9C200F08AB7 /* BNRReminderViewController.h */,
 				C585F0F91A91D9C200F08AB7 /* BNRReminderViewController.m */,
+				C585F10E1A92D24200F08AB7 /* QuizViewController.h */,
+				C585F10F1A92D24200F08AB7 /* QuizViewController.m */,
 				C585F0D01A91CB4700F08AB7 /* Images.xcassets */,
 				C585F1011A91E37A00F08AB7 /* BNRReminderViewController.xib */,
 				C585F0D21A91CB4700F08AB7 /* LaunchScreen.xib */,
+				C585F1111A92D27900F08AB7 /* QuizViewController.xib */,
 				C585F0C31A91CB4700F08AB7 /* Supporting Files */,
 			);
 			path = HypnoNerd;
@@ -213,6 +221,7 @@
 				C585F1021A91E37A00F08AB7 /* BNRReminderViewController.xib in Resources */,
 				C585F0D41A91CB4700F08AB7 /* LaunchScreen.xib in Resources */,
 				C585F0D11A91CB4700F08AB7 /* Images.xcassets in Resources */,
+				C585F1121A92D27900F08AB7 /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +244,7 @@
 				C585F0C61A91CB4700F08AB7 /* main.m in Sources */,
 				C585F0FA1A91D9C200F08AB7 /* BNRReminderViewController.m in Sources */,
 				C585F0EB1A91CDFE00F08AB7 /* BNRHypnosisView.m in Sources */,
+				C5E82A881A92E45B0053873A /* QuizViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +427,7 @@
 				C585F0E51A91CB4700F08AB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C585F0E61A91CB4700F08AB7 /* Build configuration list for PBXNativeTarget "HypnoNerdTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +436,7 @@
 				C585F0E81A91CB4700F08AB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

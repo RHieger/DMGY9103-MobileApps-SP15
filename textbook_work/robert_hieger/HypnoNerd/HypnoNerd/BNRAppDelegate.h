@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  BNRAppDelegate.h
 //  HypnoNerd
 //
 //  Created by Robert Hieger on 2/16/15.

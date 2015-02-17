@@ -1,5 +1,5 @@
 //
-//  AppDelegate.m
+//  BNRAppDelegate.m
 //  HypnoNerd
 //
 //  Created by Robert Hieger on 2/16/15.
@@ -9,6 +9,7 @@
 #import "BNRAppDelegate.h"
 #import "BNRHypnosisViewController.h"
 #import "BNRReminderViewController.h"
+#import "QuizViewController.h"
 
 @interface BNRAppDelegate ()
 
@@ -30,6 +31,7 @@ didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
                          UIUserNotificationTypeSound
        categories: nil] ];
     
+    // Instantiate frame for mainScreen.
     
     self.window = [ [UIWindow alloc]
                     initWithFrame: [ [UIScreen mainScreen] bounds] ];
@@ -42,17 +44,20 @@ didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
     BNRReminderViewController *rvc =
     [ [BNRReminderViewController alloc] init ];
     
+    QuizViewController *qvc = [ [QuizViewController alloc] init ];
+    
     
     UITabBarController *tabBarController =
     [ [UITabBarController alloc] init ];
     
     // Create array of associated view controllers.
     
-    tabBarController.viewControllers = @[hvc, rvc];
+    tabBarController.viewControllers = @[hvc, rvc, qvc];
     
     self.window.rootViewController = tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
     
     return YES;

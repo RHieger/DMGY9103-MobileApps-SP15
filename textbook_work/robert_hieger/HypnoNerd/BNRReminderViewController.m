@@ -84,4 +84,19 @@
     
 }   // end loadView
 
+// Override viewWillAppear.
+
+- (void) viewWillAppear:(BOOL)animated {
+    
+    // Call the super class to override it.
+    
+    [super viewWillAppear: animated];
+    
+    // Constrain datePicker to allow times a minimum of 60 seconds
+    // into the future.
+    
+    self.datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow: 60];
+    
+}   // end viewWillAppear: (BOOL) animated
+
 @end

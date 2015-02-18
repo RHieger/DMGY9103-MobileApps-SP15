@@ -1,0 +1,37 @@
+First iOS App Idea
+
+FoodJournal:
+
+FoodJournal is a food-tracking application for nutritionally conscious people under the care of a nutritionist.
+
+FEATURES:
+
+NOTE: Features with an X next to them are those chosen for first prototype, based on target user info.
+
+[] Enter a log of all meals and snacks eaten each day
+
+[] Auto-entry of caloric, fat and carbohydrate content for each item
+
+[] Lookup feature for food items not in database
+
+[] Create PDF of Daily Food Consumption, Overage/Underage of Daily Allowance
+
+[] Create PDF Monthly Report of Food Consumption
+
+[] Send PDF Monthly Report to Nutritionist
+
+[] Print Monthly Report (airPrint)
+
+[] Print Daily Report (airPrint)
+
+TARGET USER:
+
+* Nutritionally-conscious person, at least somewhat overweight
+
+* Goes to a nutritionist
+
+* Hates the tedium of writing down food logs, wants easier way
+
+* Needs to send logs to nutritionist in printable form
+
+* Doesn't want to have to look up food calorie, fat and carbohydrate content

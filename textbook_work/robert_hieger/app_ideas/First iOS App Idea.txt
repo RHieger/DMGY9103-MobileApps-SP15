@@ -38,16 +38,14 @@ TARGET USER:
 
 * Needs to sync data from iPhone to database
 
-* Needs to produce invoice files that can be sent back to computer and to client as PDFs
+* Produce PDF invoice for client and database.
 
 * Wants an easy and straightforward interface
 
-* Needs to be able to track ongoing projects on-the-go and sync the information back to database
+* Track/Sync Ongoing Projects to Computer
 
 * Wants Reminders of Client Appointments
 
-* Needs to Enter Invoice Data and have them assembled in a finished invoice including signature
+* Send Invoice to Printer via airPrint
 
-* Wants to Be Able to Send Invoice to Printer via airPrint
-
-* Typical user is at least moderately computer literate
+* User is at least moderately computer literate

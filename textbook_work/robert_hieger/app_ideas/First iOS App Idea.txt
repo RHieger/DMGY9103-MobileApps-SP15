@@ -1,2 +1,53 @@
 First iOS App Idea
 
+JobLogger:
+
+A simple-to-use application for on-the-go consultant or freelancer to track client jobs and invoicing.
+
+FEATURES:
+
+NOTE: Features with an X next to them are those chosen for first prototype, based on target user info.
+
+[X] Input/Import Client Contact and meta-information
+
+[] Customize App with Your Logo
+
+[X] Enter/Track and Sync Jobs to Database (Contractual or Hourly)
+
+[] Enter Job Tasks to Invoice
+
+[] Send Invoice to Printer (airPrint)
+
+X] Send completed invoice w/ signature to client as PDF
+
+[] Alert User Within Minimum of 2 Hours of Appointment
+
+[] Sort Projects By Due Date
+
+[] Sort Client List by Name
+
+[] Sort Client by Client Number
+
+[] Send email reminder to client day before appointment
+
+TARGET USER:
+
+* On-the-Go Consultant/Freelancer
+
+* Cannot always get back to office/home office to refer to home computer client database
+
+* Needs to sync data from iPhone to database
+
+* Needs to produce invoice files that can be sent back to computer and to client as PDFs
+
+* Wants an easy and straightforward interface
+
+* Needs to be able to track ongoing projects on-the-go and sync the information back to database
+
+* Wants Reminders of Client Appointments
+
+* Needs to Enter Invoice Data and have them assembled in a finished invoice including signature
+
+* Wants to Be Able to Send Invoice to Printer via airPrint
+
+* Typical user is at least moderately computer literate

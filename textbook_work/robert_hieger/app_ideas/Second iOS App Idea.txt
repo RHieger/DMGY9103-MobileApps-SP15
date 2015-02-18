@@ -8,13 +8,13 @@ FEATURES:
 
 NOTE: Features with an X next to them are those chosen for first prototype, based on target user info.
 
-[] Enter a log of all meals and snacks eaten each day
+[X] Enter a log of all meals and snacks eaten each day
 
-[] Auto-entry of caloric, fat and carbohydrate content for each item
+[X] Auto-entry of caloric, fat and carbohydrate content for each item
 
 [] Lookup feature for food items not in database
 
-[] Create PDF of Daily Food Consumption, Overage/Underage of Daily Allowance
+[X] Create PDF of Daily Food Consumption, Overage/Underage of Daily Allowance
 
 [] Create PDF Monthly Report of Food Consumption
 

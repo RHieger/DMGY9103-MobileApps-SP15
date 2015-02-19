@@ -23,7 +23,7 @@
                 </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpq-K1-J21">
                     <rect key="frame" x="19" y="381" width="282" height="30"/>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="Remind Me!">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>

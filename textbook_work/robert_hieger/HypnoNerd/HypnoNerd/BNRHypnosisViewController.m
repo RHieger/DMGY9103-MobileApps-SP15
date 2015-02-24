@@ -26,6 +26,26 @@
     BNRHypnosisView *backgroundView = [ [BNRHypnosisView alloc]
                                         initWithFrame: frame ];
     
+    // Add UITextField to view. First We need a rectangle
+    // to contain it.
+    
+    CGRect textFieldRect = CGRectMake(40, 270, 240, 30);
+    
+    // Set the context of *textField to textFieldRect.
+    
+    UITextField *textField = [ [UITextField alloc]
+                              initWithFrame: textFieldRect];
+    
+    // Setting the border on the UITextField will allow us to
+    // see it more easily. The style here is a rounded
+    // rectangle format.
+    
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    
+    // Add textField as subView to backgroundView.
+    
+    [backgroundView addSubview: textField];
+    
     // Set it as *the* view of this view controller.
     
     self.view = backgroundView;

@@ -9,7 +9,7 @@
 #import "BNRHypnosisViewController.h"
 #import "BNRHypnosisView.h"
 
-@interface BNRHypnosisViewController ()
+@interface BNRHypnosisViewController () <UITextFieldDelegate>
 
 @end
 
@@ -50,6 +50,11 @@
     
     textField.returnKeyType = UIReturnKeyDone;
     
+    // There will be a warning on this line. We will
+    // discuss it shortly.
+    
+    textField.delegate = self;
+    
     // Add textField as subView to backgroundView.
     
     [backgroundView addSubview: textField];
@@ -74,7 +79,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-// Override - (instancetype) initWithNibName: (NSString *) nibNameOrNil
+- (BOOL) textFieldShouldReturn: (UITextField *) textField {
+    
+    NSLog(@"%@", textField);
+    
+    return YES;
+    
+}   // end textFieldShouldReturn: (UITextfield *) textfield
+
+//  Override - (instancetype) initWithNibName: (NSString *) nibNameOrNil
 //                           bundle: (NSBundle *) bundleOrNil
 
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil

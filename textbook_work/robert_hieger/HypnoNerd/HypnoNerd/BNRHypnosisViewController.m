@@ -135,6 +135,38 @@
         
         [self.view addSubview: messageLabel];
         
+        // Create horizontal and vertical parallex
+        // effect that will respond as 25 points
+        // plus or minus tilt of the horizontal
+        // and vertical axes of messageLabel.
+        
+        // NOTE: These effects will be visible only
+        // on an iPad or iPhone, not on Mac OS X.
+        
+        UIInterpolatingMotionEffect *motionEffect;
+        
+        motionEffect = [ [UIInterpolatingMotionEffect alloc]
+        initWithKeyPath: @"center.x"
+        type: UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis ];
+        
+        motionEffect.minimumRelativeValue = @-0.25;
+        motionEffect.maximumRelativeValue = @0.25;
+        
+        // Add horizontal motion effect to messageLabel.
+        
+        [messageLabel addMotionEffect: motionEffect];
+        
+        motionEffect= [ [UIInterpolatingMotionEffect alloc]
+        initWithKeyPath: @"center.y"
+        type: UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis ];
+        
+        motionEffect.minimumRelativeValue = @-0.25;
+        motionEffect.maximumRelativeValue = @0.25;
+        
+        // Add vertical motion effect to messageLabel.
+        
+        [messageLabel addMotionEffect: motionEffect];
+        
     }   // end for
     
 }   // end - (void) drawHypnoticMessage: (NSString *) message

@@ -9,7 +9,6 @@
 #import "BNRAppDelegate.h"
 #import "BNRHypnosisViewController.h"
 #import "BNRReminderViewController.h"
-#import "QuizViewController.h"
 
 @interface BNRAppDelegate ()
 
@@ -44,15 +43,12 @@ didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
     BNRReminderViewController *rvc =
     [ [BNRReminderViewController alloc] init ];
     
-    QuizViewController *qvc = [ [QuizViewController alloc] init ];
-    
-    
     UITabBarController *tabBarController =
     [ [UITabBarController alloc] init ];
     
     // Create array of associated view controllers.
     
-    tabBarController.viewControllers = @[hvc, rvc, qvc];
+    tabBarController.viewControllers = @[hvc, rvc];
     
     self.window.rootViewController = tabBarController;
     

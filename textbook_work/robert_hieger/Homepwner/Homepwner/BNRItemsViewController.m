@@ -7,6 +7,8 @@
 //
 
 #import "BNRItemsViewController.h"
+#import "BNRItemStore.h"
+#import "BNRItem.h"
 
 @implementation BNRItemsViewController
 
@@ -31,6 +33,18 @@
     // Here I call the designated initializer and specify
     // the UITableViewStylePlain.
     
+    // Now add five randomItems.
+    
+    if (self) {
+        
+        for (int i = 0; i < 5; i++) {
+            
+            [ [BNRItemStore sharedStore] createItem ];
+
+        }   // end for
+        
+    }   // end if
+    
     return self;
     
 }   // end - (instancetype) init
@@ -43,5 +57,41 @@
     return [self init];
     
 }   // end - (instancetype) initWithStyle: (UITableViewStyle) style
+
+// Required methods for UITableView protocol
+
+- (NSInteger) tableView: (UITableView *) tableView
+  numberOfRowsInSection:(NSInteger)section
+
+{
+    
+    return [ [ [BNRItemStore sharedStore] allItems ] count  ];
+    
+}   // end - (NSInteger) tableView: (UITableView *) tableView
+    //       numberOfRowsInSection: (NSInteger) section
+
+- (UITableViewCell *) tableView: (UITableView *)
+tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
+    
+    // Create an instance of UITableViewCell, with
+    // default appearance.
+    
+    UITableViewCell *cell = [ [UITableViewCell alloc]
+                             initWithStyle:  UITableViewCellStyleDefault
+                             reuseIdentifier: @"UITableViewCell"];
+    
+    // Set the text on the cell with the description of the item
+    // that is at the nth index of items, where n = row this cell.
+    
+    NSArray *items = [ [BNRItemStore sharedStore] allItems ];
+    
+    BNRItem *item = items[indexPath.row];
+    
+    cell.textLabel.text = [item description];
+    
+    return cell;
+    
+}  // end - (UITableViewCell *) tableView (UITableView *)
+   //
 
 @end

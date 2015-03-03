@@ -136,9 +136,16 @@ tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
 
 - (IBAction) addNewItem: (id) sender {
     
-    // Make a new indexPath for the 0th section, last row.
+    // Create a new BNRItem and add it to the store.
     
-    NSInteger lastRow = [self.tableView numberOfRowsInSection: 0];
+    BNRItem *newItem = [ [BNRItemStore sharedStore]
+                          createItem ];
+    
+    // Figure out where that item is in the array and assign
+    // its location to an NSInteger.
+    
+    NSInteger lastRow = [ [ [BNRItemStore sharedStore] allItems ]
+                           indexOfObject: newItem ];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow: lastRow
                                                 inSection: 0];

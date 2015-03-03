@@ -10,6 +10,14 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
+// Class extension for BNRItemsViewController:
+
+@interface BNRItemsViewController ()
+
+@property (nonatomic, strong) IBOutlet UIView *headerView;
+
+@end
+
 @implementation BNRItemsViewController
 
 /* OVERRIDE UITableViewController's designated initializer.
@@ -56,6 +64,10 @@
     [self.tableView registerClass: [UITableViewCell class]
            forCellReuseIdentifier: @"UITableViewCell"];
     
+    UIView *header = self.headerView;
+    
+    [self.tableView setTableHeaderView: header];
+    
 }   // end viewDidLoad
 
 - (instancetype) initWithStyle: (UITableViewStyle) style {
@@ -101,5 +113,37 @@ tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
     
 }  // end - (UITableViewCell *) tableView (UITableView *)
    //
+
+- (UIView *) headerView {
+    
+    // If you have not loaded headerView yet...
+    
+    if (! _headerView) {
+        
+        // Load headerView.xib
+        
+        [ [NSBundle mainBundle] loadNibNamed: @"HeaderView"
+                                       owner: self
+                                     options: nil ];
+        
+    }   // end if (! _headerView)
+    
+    return _headerView;
+    
+}   // end - (UIView *) headerView
+
+// Instance methods to add editing capability:
+
+- (IBAction) addNewItem: (id) sender {
+    
+    
+    
+}   // end - (IBAction) addNewItem: (id) sender
+
+- (IBAction) toggleEditingMode: (id) sender {
+    
+    
+    
+}   // end - (IBAction) toggleEditingMode (id) sender
 
 @end

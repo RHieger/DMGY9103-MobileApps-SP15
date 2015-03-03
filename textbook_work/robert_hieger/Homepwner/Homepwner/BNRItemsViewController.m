@@ -136,7 +136,17 @@ tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
 
 - (IBAction) addNewItem: (id) sender {
     
+    // Make a new indexPath for the 0th section, last row.
     
+    NSInteger lastRow = [self.tableView numberOfRowsInSection: 0];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow: lastRow
+                                                inSection: 0];
+    
+    // Insert this new row into the table.
+    
+    [self.tableView insertRowsAtIndexPaths: @[indexPath]
+                          withRowAnimation: UITableViewRowAnimationTop];
     
 }   // end - (IBAction) addNewItem: (id) sender
 

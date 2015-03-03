@@ -89,4 +89,12 @@
     
 }   // end - (BNRItem *) createItem
 
+- (void) removeItem: (BNRItem *) item {
+    
+    // Remove BNRItem from tableView.
+    
+    [self.privateItems removeObjectIdenticalTo: item];
+    
+}   // end - (void) removeItem: (BNRItem *) item
+
 @end

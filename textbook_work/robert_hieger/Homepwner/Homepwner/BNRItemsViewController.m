@@ -181,4 +181,38 @@ tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
     
 }   // end - (IBAction) toggleEditingMode (id) sender
 
+// tableView method to send message to BNRItemStore to
+// confirm deletion of a row from the tableView.
+
+- (void) tableView: (UITableView *) tableView
+commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
+ forRowAtIndexPath: (NSIndexPath *)indexPath {
+    
+    // If tableView is asking to commit a delete command...
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        // Create read only NSArray version of allItems NSMutableArray.
+        
+        NSArray *items = [ [BNRItemStore sharedStore] allItems ];
+        
+        // Specify row to delete.
+        
+        BNRItem *item = items[indexPath.row];
+        
+        // Remove that item from the sharedStore.
+        
+        [ [BNRItemStore sharedStore] removeItem: item ];
+        
+        // Also remove that row from tableView (screen) with animation.
+        
+        [ tableView deleteRowsAtIndexPaths: @[indexPath]
+                          withRowAnimation: UITableViewRowAnimationFade ];
+        
+    }   // end if
+    
+}   // end -(void) tableView: (UITableView *) tableView
+    //    commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
+    //     forRowAtIndexPath: (NSIndexPath *) indexPath
+
 @end

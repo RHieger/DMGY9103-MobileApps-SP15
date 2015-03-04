@@ -215,4 +215,17 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     //    commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     //     forRowAtIndexPath: (NSIndexPath *) indexPath
 
+// Method to update dataStore for tableView.
+
+- (void) tableView: (UITableView *) tableView
+moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
+       toIndexPath: (NSIndexPath *) destinationIndexPath {
+    
+    [ [BNRItemStore sharedStore] moveItemAtIndex: sourceIndexPath.row
+                                         toIndex: destinationIndexPath.row ];
+    
+}   // end - (void) tableView: (UITableView *) tableView
+    //     moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
+    //            toIndexPath: (NSIndexPath *) indexPath
+
 @end

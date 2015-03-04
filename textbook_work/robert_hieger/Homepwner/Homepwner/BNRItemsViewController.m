@@ -215,6 +215,15 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     //    commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     //     forRowAtIndexPath: (NSIndexPath *) indexPath
 
+// Change Default Delete Button Appearance.
+
+- (NSString *) tableView: (UITableView *) tableView
+titleForDeleteConfirmationButtonForRowAtIndexPath: (NSIndexPath *)indexPath {
+                             
+    return @"Remove";
+                             
+}
+
 // Method to update dataStore for tableView.
 
 - (void) tableView: (UITableView *) tableView

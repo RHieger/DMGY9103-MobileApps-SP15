@@ -270,4 +270,19 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
 }   // end - (void) tableView: (UITableView *) tableView
     //     didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 
+// Implement viewWillAppear to assure that row updated in
+// BNRDetailView reflects the updates in BNRItemsView.
+
+- (void) viewWillAppear: (BOOL) animated {
+    
+    // Reference super class.
+    
+    [super viewWillAppear: animated];
+    
+    // Refresh the data on the selected table row.
+    
+    [self.tableView reloadData];
+    
+}   // end - (void) viewWillAppear: (BOOL) animated
+
 @end

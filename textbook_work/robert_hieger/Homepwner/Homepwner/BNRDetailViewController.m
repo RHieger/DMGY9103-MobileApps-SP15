@@ -69,4 +69,27 @@
     
 }   // end - (void) viewWillAppear: (BOOL) animated
 
+- (void) viewWillDisappear: (BOOL) animated {
+    
+    // Reference super class.
+    
+    [super viewWillDisappear: animated];
+    
+    // Clear first responder.
+    
+    [self.view endEditing: YES];
+    
+    // "Save" changes to item (presumably all item objects
+    // are destroyed upon exiting the app).
+    
+    BNRItem *item = self.item;
+    
+    // Specify property values:
+    
+    item.itemName = self.nameField.text;
+    item.serialNumber = self.serialNumberField.text;
+    item.valueInDollars = [self.valueField.text intValue];
+    
+}   // end - (void) viewWillDisappear: (BOOL) animated
+
 @end

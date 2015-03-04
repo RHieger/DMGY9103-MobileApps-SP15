@@ -46,7 +46,10 @@
     
     if (self) {
         
+        // Set title for navigation bar of ItemsView.
         
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
         
     }   // end if
     

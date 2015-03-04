@@ -254,6 +254,19 @@ didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
     [self.navigationController pushViewController: detailViewController
                                          animated: YES];
     
+    // Make sure BNRDetailViewController has its item beore viewWillAppear
+    // is called.
+    
+    NSArray *items = [ [BNRItemStore sharedStore] allItems ];
+    
+    // Create pointer to the selected row item.
+    
+    BNRItem *selectedItem = items[indexPath.row];
+    
+    // Give detailViewController a pointer to the item object in row.
+    
+    detailViewController.item = selectedItem;
+    
 }   // end - (void) tableView: (UITableView *) tableView
     //     didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+// Forward declare BNRItem class--question for class (fellow students).
+
+@class BNRItem;
+
 @interface BNRDetailViewController : UIViewController
+
+@property (nonatomic, strong) BNRItem *item;
 
 @end

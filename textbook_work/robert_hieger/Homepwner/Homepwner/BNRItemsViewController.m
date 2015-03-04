@@ -7,6 +7,7 @@
 //
 
 #import "BNRItemsViewController.h"
+#import "BNRDetailViewController.h"     // Enables pushing view controllers.
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
@@ -236,5 +237,24 @@ moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
 }   // end - (void) tableView: (UITableView *) tableView
     //     moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
     //            toIndexPath: (NSIndexPath *) indexPath
+
+// Implement method to instantiate and push onto the stack
+// a BNRDetailView Controller view.
+
+- (void) tableView: (UITableView *) tableView
+didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+    
+    // Instantiate BNRDetailViewController object.
+    
+    BNRDetailViewController *detailViewController =
+    [ [BNRDetailViewController alloc] init ];
+    
+    // Push detailViewController onto the top of navController's stack.
+    
+    [self.navigationController pushViewController: detailViewController
+                                         animated: YES];
+    
+}   // end - (void) tableView: (UITableView *) tableView
+    //     didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 
 @end

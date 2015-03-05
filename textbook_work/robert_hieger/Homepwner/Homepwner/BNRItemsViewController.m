@@ -13,12 +13,6 @@
 
 // Class extension for BNRItemsViewController:
 
-@interface BNRItemsViewController ()
-
-@property (nonatomic, strong) IBOutlet UIView *headerView;
-
-@end
-
 @implementation BNRItemsViewController
 
 /* OVERRIDE UITableViewController's designated initializer.
@@ -82,10 +76,6 @@
     [self.tableView registerClass: [UITableViewCell class]
            forCellReuseIdentifier: @"UITableViewCell"];
     
-    UIView *header = self.headerView;
-    
-    [self.tableView setTableHeaderView: header];
-    
 }   // end viewDidLoad
 
 - (instancetype) initWithStyle: (UITableViewStyle) style {
@@ -132,24 +122,6 @@ tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
 }  // end - (UITableViewCell *) tableView (UITableView *)
    //
 
-- (UIView *) headerView {
-    
-    // If you have not loaded headerView yet...
-    
-    if (! _headerView) {
-        
-        // Load headerView.xib
-        
-        [ [NSBundle mainBundle] loadNibNamed: @"HeaderView"
-                                       owner: self
-                                     options: nil ];
-        
-    }   // end if (! _headerView)
-    
-    return _headerView;
-    
-}   // end - (UIView *) headerView
-
 // Instance methods to add editing capability:
 
 - (IBAction) addNewItem: (id) sender {
@@ -174,34 +146,6 @@ tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
                           withRowAnimation: UITableViewRowAnimationTop];
     
 }   // end - (IBAction) addNewItem: (id) sender
-
-- (IBAction) toggleEditingMode: (id) sender {
-    
-    // If you are currently in editing mode...
-    
-    if (self.isEditing) {
-        
-        // Change text of button to inform user of state.
-        
-        [sender setTitle: @"Edit" forState: UIControlStateNormal];
-        
-        // Turn off editing mode.
-        
-        [self setEditing: NO animated: YES];
-        
-    }   else {
-        
-        // Change text of button to inform user of state.
-        
-        [sender setTitle: @"Done" forState: UIControlStateNormal];
-        
-        // Enter editing mode.
-        
-        [self setEditing: YES animated: YES];
-        
-    }   // end if-else (self.isEdting)
-    
-}   // end - (IBAction) toggleEditingMode (id) sender
 
 // tableView method to send message to BNRItemStore to
 // confirm deletion of a row from the tableView.

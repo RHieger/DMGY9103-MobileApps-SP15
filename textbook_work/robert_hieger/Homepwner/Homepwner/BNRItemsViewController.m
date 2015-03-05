@@ -65,6 +65,10 @@
         
         navItem.rightBarButtonItem = bbi;
         
+        // Add Edit UIBarButtonItem on left.
+        
+        navItem.leftBarButtonItem = self.editButtonItem;
+        
     }   // end if
     
     return self;

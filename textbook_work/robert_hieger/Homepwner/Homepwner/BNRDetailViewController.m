@@ -99,4 +99,14 @@
     
 }   // end - (void setItem: (BNRItem *) item
 
+// IBAction sends message to valueField
+// telling it to resign the number pad
+// first responder.
+
+- (IBAction) submitButton: (id) sender {
+    
+    [self.valueField resignFirstResponder];
+    
+}   // end - (IBAction) submitButton: (id) sender
+
 @end

@@ -103,10 +103,11 @@
 // telling it to resign the number pad
 // first responder.
 
-- (IBAction) submitButton: (id) sender {
+- (IBAction) backgroundButton: (id)sender {
     
     [self.valueField resignFirstResponder];
     
-}   // end - (IBAction) submitButton: (id) sender
+}   // end - (IBAction) backgroundButton: (id) sender
+
 
 @end

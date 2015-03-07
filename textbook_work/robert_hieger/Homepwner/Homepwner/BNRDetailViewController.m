@@ -17,7 +17,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 
+
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *changeDate;
 
 @end
 
@@ -108,6 +112,14 @@
     [self.valueField resignFirstResponder];
     
 }   // end - (IBAction) backgroundButton: (id) sender
+
+// Switch view to dateChangeViewController
+
+- (IBAction) changeDate: (id) sender {
+    
+    
+    
+}
 
 
 @end

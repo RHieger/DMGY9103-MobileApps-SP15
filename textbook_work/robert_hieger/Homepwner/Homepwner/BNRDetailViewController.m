@@ -8,6 +8,7 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
+#import "BNRChangeDateViewController.h"
 
 @interface BNRDetailViewController ()
 
@@ -117,7 +118,16 @@
 
 - (IBAction) changeDate: (id) sender {
     
+    BNRChangeDateViewController *newDate =
+    [ [BNRChangeDateViewController alloc]
+     initWithNibName: @"BNRChangeDateViewController"
+              bundle: nil];
     
+    [self presentViewController: newDate
+                       animated: YES
+                     completion: nil];
+    
+    [newDate canBecomeFirstResponder];
     
 }
 

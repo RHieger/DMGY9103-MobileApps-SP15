@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-// Forward declare BNRItem class--question for class (fellow students).
+// Forward declare BNRItem class
 
 @class BNRItem;
 

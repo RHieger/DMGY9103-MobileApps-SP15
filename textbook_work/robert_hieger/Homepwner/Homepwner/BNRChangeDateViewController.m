@@ -8,10 +8,13 @@
 
 #import "BNRChangeDateViewController.h"
 #import "BNRItem.h"
+#import "BNRDetailViewController.h"
 
 @interface BNRChangeDateViewController ()
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *changeDate;
+
+@property (weak, nonatomic) IBOutlet UIButton *submitNewDate;
 
 @end
 
@@ -43,5 +46,12 @@
     
     
 }   // end - (IBAction) changeDate (UIDate Picker *) sender
+
+- (IBAction)submitNewDate:(UIButton *)sender {
+    
+    [self resignFirstResponder];
+    
+}
+
 
 @end

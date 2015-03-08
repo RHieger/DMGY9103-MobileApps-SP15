@@ -6,7 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRChangeDateViewController">
             <connections>
-                <outlet property="changeDate" destination="iI8-fy-GSB" id="Ca2-oI-KJr"/>
+                <outlet property="changeDate" destination="iI8-fy-GSB" id="b35-Wb-BcI"/>
+                <outlet property="submitNewDate" destination="YyP-js-7hc" id="NZt-0B-Y4h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,6 +25,16 @@
                         <action selector="changeDate:" destination="-1" eventType="editingDidBegin" id="SeV-q5-0HY"/>
                     </connections>
                 </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyP-js-7hc">
+                    <rect key="frame" x="149" y="455" width="78" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="submitNewDate:" destination="-1" eventType="touchUpInside" id="QVe-jL-1kT"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

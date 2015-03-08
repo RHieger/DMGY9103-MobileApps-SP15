@@ -127,7 +127,6 @@
                        animated: YES
                      completion: nil];
     
-    [newDate canBecomeFirstResponder];
     
 }
 

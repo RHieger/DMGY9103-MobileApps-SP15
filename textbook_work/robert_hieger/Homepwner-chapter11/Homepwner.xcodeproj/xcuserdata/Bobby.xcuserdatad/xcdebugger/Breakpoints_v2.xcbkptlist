@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Homepwner/BNRChangeDateViewController.m"
-            timestampString = "447482713.176757"
+            timestampString = "447559540.863047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-submitNewDate:"
-            landmarkType = "5">
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "@implementation BNRChangeDateViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

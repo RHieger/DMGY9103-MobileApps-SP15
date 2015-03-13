@@ -108,48 +108,28 @@
 // telling it to resign the number pad
 // first responder.
 
-- (void) imagePickerController: (UIImagePickerController *) picker
- didFinishPickingMediaWithInfo: (NSDictionary *) info {
-    
-    // Get picked image from info dictionary.
-    
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
-    
-    // Put that image onto the screen in our image view.
-    
-    self.imageView.image = image;
-    
-    // Take image picker off the screen—
-    // you must call this dismiss method.
-    
-    [self dismissViewControllerAnimated: YES completion: NULL];
-    
-}   // end - (void) imagePickerController: (UIImagePickerController *) picker
-    //      didFinishPickingMediaWithInfo: (NSDictionary *) info
-
 - (IBAction) backgroundButton: (id)sender {
     
     [self.valueField resignFirstResponder];
     
 }   // end - (IBAction) backgroundButton: (id) sender
 
-// Method with camera functionality.
+// Method for UIToolBar camera button item:
 
-- (IBAction) takePicture: (id)sender {
-    
-    // Instantiate imagePickerController object.
+- (IBAction) takePicture: (id) sender {
     
     UIImagePickerController *imagePicker =
     [ [UIImagePickerController alloc] init ];
     
-    // If the device has a camera, take a picture.
-    // Otherwise, just pick from photo library.
+    // If the device has a camera, take a picture. Otherwise,
+    // just pick from photo library.
     
     if ( [UIImagePickerController
-          isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera] ) {
+          isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] )
+    
+    {
         
-        imagePicker.sourceType =
-        UIImagePickerControllerSourceTypeCamera;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         
     }   else {
         
@@ -158,13 +138,15 @@
         
     }   // end if-else
     
+    // Set the deleagte for takePicture:
+    
     imagePicker.delegate = self;
     
     // Place imagePicker on the screen.
     
     [self presentViewController: imagePicker
                        animated: YES
-                     completion: nil];
+                     completion: NULL];
     
 }   // end - (IBAction) takePicture: (id) sender
 

@@ -11,8 +11,6 @@
                                 // what will be drawn in
                                 // BNRDrawView.
 
-#import "BNRDrawView.h"
-
 // Extend BNRDrawView Class:
 
 @interface BNRDrawView ()

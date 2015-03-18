@@ -14,5 +14,3 @@
 @interface BNRDrawView : UIView
 
 @end
-
-

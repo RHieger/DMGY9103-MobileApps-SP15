@@ -90,9 +90,9 @@
 				C572898E1AB7F9AC005E3180 /* BNRLine.h */,
 				C572898F1AB7F9AC005E3180 /* BNRLine.m */,
 				C57289911AB7FB72005E3180 /* BNRDrawView.h */,
+				C57289921AB7FB72005E3180 /* BNRDrawView.m */,
 				C57289941AB7FC52005E3180 /* BNRDrawViewController.h */,
 				C57289951AB7FC52005E3180 /* BNRDrawViewController.m */,
-				C57289921AB7FB72005E3180 /* BNRDrawView.m */,
 				C57289751AB7F6A4005E3180 /* Images.xcassets */,
 				C57289771AB7F6A4005E3180 /* LaunchScreen.xib */,
 				C57289681AB7F6A4005E3180 /* Supporting Files */,
@@ -345,6 +345,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TouchTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TouchTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -414,6 +416,7 @@
 				C572898A1AB7F6A4005E3180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C572898B1AB7F6A4005E3180 /* Build configuration list for PBXNativeTarget "TouchTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +425,7 @@
 				C572898D1AB7F6A4005E3180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

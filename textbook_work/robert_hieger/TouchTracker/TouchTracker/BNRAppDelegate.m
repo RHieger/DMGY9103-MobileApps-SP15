@@ -18,13 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
-    return YES;
-
     /* Override point for customization after
        application launch.                      */
     
@@ -36,6 +29,13 @@
     // Set the root view controller to dvc.
     
     self.window.rootViewController = dvc;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    return YES;
     
 }   //               end application: (UIApplication *) application
     // didFinishLaunchingWithOptions: (NSDictionary *) launchOptions

@@ -25,8 +25,8 @@
 
 - (void) loadView {
     
-    self.view = [[BNRDrawView alloc]
-                 initWithFrame: CGRectZero];
+    self.view = [ [BNRDrawView alloc]
+                  initWithFrame: CGRectZero ];
     
 }   // end - (void) loadView
 

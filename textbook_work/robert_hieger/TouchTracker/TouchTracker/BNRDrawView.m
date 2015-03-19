@@ -228,4 +228,34 @@
 }   // end - (void) touchesEnded: (NSSet *) touches
     //                 withEvent: (UIEvent *) event
 
+// Implement method to handle interruptions from iOS, such as
+// a phone call coming in on the iPhone.
+
+- (void) touchesCancelled: (NSSet *) touches
+                withEvent: (UIEvent *) event    {
+    
+    // Let's put in a log statement to see the order of events.
+    
+    NSLog( @"%@", NSStringFromSelector(_cmd) );
+    
+    // Remove unfinished lines from linesInProgress.
+    
+    for (UITouch *t in touches) {
+        
+        NSValue *key = [NSValue valueWithNonretainedObject: t];
+        
+        // Remove unfinished BNRLines from linesInProgress.
+        
+        [self.linesInProgress removeObjectForKey: key];
+        
+    }   // end for
+    
+    // Signal event for display, so view is updated.
+    
+    [self setNeedsDisplay];
+    
+    
+}   // end - (void) touchesCancelled: (NSSet *) touches
+    //                     withEvent: (UIEvent *) event
+
 @end

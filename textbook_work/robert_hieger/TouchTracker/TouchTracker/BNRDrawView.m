@@ -17,7 +17,7 @@
 
 // Line's beginning state:
 
-@property (nonatomic, strong) BNRLine *currentLine;
+@property (nonatomic, strong) NSMutableDictionary *linesInProgress;
 
 // Line's or Lines' ending state:
 
@@ -41,6 +41,11 @@
     
     if (self)   {
         
+        // Instantiate NSMutableDictionary object linesInProgress.
+        
+        self.linesInProgress =
+        [ [NSMutableDictionary alloc] init ];
+        
         // Instantiate NSMutableArray to hold line objects.
         
         self.finishedLines = [ [NSMutableArray alloc] init ];
@@ -48,6 +53,11 @@
         // Set backgroundColor.
         
         self.backgroundColor = [UIColor grayColor];
+        
+        // Enable multiple touches, i.e. multiple
+        // simultaneous lines.
+        
+        self.multipleTouchEnabled = YES;
         
     }   // end if
     
@@ -101,18 +111,18 @@
         
     }   // end for
     
-    if (self.currentLine) {
+    // Set lines in progress to red color.
+    
+    [ [UIColor redColor] set ];
+    
+    for (NSValue *key in self.linesInProgress) {
         
-        // If there is a line currently being drawn,
-        // do it in red.
+        // Draw lines in progress.
         
-        [ [UIColor redColor] set ];
+        [ self strokeLine: self.linesInProgress[key] ];
         
-        // Define line in progress.
-        
-        [self strokeLine: self.currentLine];
-        
-    }   // end if
+    }   // end for
+    
     
 }   // end - (void) drawRect: (CGRect) rect
 
@@ -121,22 +131,31 @@
 - (void) touchesBegan: (NSSet *) touches
             withEvent: (UIEvent *) event    {
     
-    // Instantiate UITouch object.
+    // Let's put in a log statement to seee the order
+    // of events.
     
-    UITouch *t = [touches anyObject];
+    NSLog( @"%@", NSStringFromSelector(_cmd) );
     
-    // Locate X-Y coordinates of where screen has
-    // been touched--accomplished by instantiating
-    // a BNRLine object and setting its beginning
-    // end endpoints for the line.
-    
-    CGPoint location = [t locationInView: self];
-    
-    self.currentLine = [ [BNRLine alloc] init ];
-    
-    self.currentLine.begin = location;
-    
-    self.currentLine.end = location;
+    for (UITouch *t in touches) {
+        
+        // Instantiate line object and set its beginning
+        // and ending points.
+        
+        BNRLine *line = [ [BNRLine alloc] init ];
+        
+        // Define point for beginning of line.
+        
+        CGPoint location = [t locationInView: self];
+        
+        
+        line.begin = location;
+        line.end = location;
+        
+        NSValue *key = [NSValue valueWithNonretainedObject: t ];
+        
+        self.linesInProgress[key] = line;
+        
+    }   // end for
     
     // Signal event for display.
     
@@ -151,15 +170,23 @@
 - (void) touchesMoved: (NSSet *) touches
             withEvent: (UIEvent *) event    {
     
-    UITouch *t = [touches anyObject];
+    // Let's put in a log statement to see the order of events.
     
-    // Get X-Y coordinates for end of line.
+    NSLog( @"%@", NSStringFromSelector(_cmd) );
     
-    CGPoint location = [t locationInView: self];
+    // Fast enumerate where touches have moved.
     
-    // Set location of line's ending.
-    
-    self.currentLine.end = location;
+    for (UITouch *t in touches) {
+
+        NSValue *key = [NSValue valueWithNonretainedObject: t];
+        
+        // Create line.
+        
+        BNRLine *line = self.linesInProgress[key];
+        
+        line.end = [t locationInView: self];
+        
+    }   // end for
     
     // Signal event for display.
     
@@ -174,13 +201,26 @@
 - (void) touchesEnded: (NSSet *) touches
             withEvent: (UIEvent *) event    {
     
-    [self.finishedLines addObject: self.currentLine];
+    // Let's put in a log statement to see the order of events.
     
-    // Destroy currentLine BNRLine object.
+    NSLog( @"%@", NSStringFromSelector(_cmd) );
     
-    self.currentLine = nil;
-    
-    // Signal event for display.
+    for (UITouch *t in touches) {
+        
+        NSValue *key = [NSValue valueWithNonretainedObject: t];
+        
+        BNRLine *line = self.linesInProgress[key];
+        
+        // Add line to NSMutableArray.
+        
+        [self.finishedLines addObject: line];
+        
+        // Remove currentLine from linesInProgress after
+        // it has been copied to finishedLines.
+        
+        [self.linesInProgress removeObjectForKey: key];
+        
+    }   // end for
     
     [self setNeedsDisplay];
     

@@ -26,11 +26,11 @@
     BNRDrawViewController *dvc =
     [ [BNRDrawViewController alloc] init];
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Set the root view controller to dvc.
     
     self.window.rootViewController = dvc;
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     self.window.backgroundColor = [UIColor whiteColor];
     

@@ -68,6 +68,11 @@
         
         doubleTapRecognizer.numberOfTapsRequired = 2;
         
+        // Prevents touchesBegan: withEvent: from drawing
+        // red point before doubleTapRecognizer is called.
+        
+        doubleTapRecognizer.delaysTouchesBegan = YES;
+        
         [self addGestureRecognizer: doubleTapRecognizer];
         
     }   // end if

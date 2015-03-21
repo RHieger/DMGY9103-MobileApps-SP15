@@ -23,6 +23,10 @@
 
 @property (nonatomic, strong) NSMutableArray *finishedLines;
 
+// Selected line:
+
+@property (nonatomic, weak) BNRLine *selectedLine;
+
 
 @end
 
@@ -128,6 +132,19 @@
     
     NSLog(@"Recognized tap");
     
+    // Send locationInView message to gr specifying
+    // the receiver as self.
+    
+    CGPoint point = [gr locationInView: self];
+    
+    // Specify the line at the selected point.
+    
+    self.selectedLine = [self lineAtPoint: point];
+    
+    // Signal event for display--set line to green selected.
+    
+    [self setNeedsDisplay];
+    
 }
 
 //  Why is this strokeLine method implemented here rather
@@ -188,8 +205,64 @@
         
     }   // end for
     
+    // Show lines selected for deletion in green.
+    
+    if (self.selectedLine) {
+        
+        [ [UIColor greenColor] set ];
+        
+        // Now draw selected line in green.
+        
+        [self strokeLine: self.selectedLine];
+        
+    }   // end if
+    
     
 }   // end - (void) drawRect: (CGRect) rect
+
+// Implement lineAtPoint to localize a line near
+// the given point (not sure why).
+
+- (BNRLine *) lineAtPoint: (CGPoint) p {
+    
+    
+    // Find a line close to CGPoint p, using fast enumeration.
+    
+    for (BNRLine *l in self.finishedLines) {
+        
+        // Fix starting and ending points of line l.
+        
+        CGPoint start = l.begin;
+        CGPoint end = l.end;
+        
+        // Check a few points on the line.
+        
+        for (float t = 0.0; t <= 1.0; t+= 0.05) {
+            
+            // Determine X- and Y-coordinates of tap.
+            
+            float x = start.x + t * (end.x - start.x);
+            float y = start.y + t * (end.y - start.y);
+            
+            // If the tapped point is within 20 points of
+            // the line, let's return this line.
+            
+            if ( hypot(x - p.x, y - p.y) < 20.0) {
+                
+                return l;
+                
+            }   // end if
+            
+        }   // end inner for
+        
+    }   // end for
+    
+    // If nothing is close enough to the tapped point,
+    // then we did not select a line.
+    
+    return nil;
+    
+}   // end - (BNRLine) lineAtPoint: (CGPoint *) p
 
 // Implement method to actually draw the lines.
 

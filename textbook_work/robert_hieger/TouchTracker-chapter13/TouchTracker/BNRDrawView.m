@@ -75,6 +75,18 @@
         
         [self addGestureRecognizer: doubleTapRecognizer];
         
+        // Add single tap recognizer used to select lines
+        // for deletion.
+        
+        UITapGestureRecognizer *tapRecognizer =
+        [ [UITapGestureRecognizer alloc]
+           initWithTarget: self
+                   action: @selector(tap:) ];
+        
+        tapRecognizer.delaysTouchesBegan = YES;
+        
+        [self addGestureRecognizer: tapRecognizer];
+        
     }   // end if
     
     return self;
@@ -100,6 +112,17 @@
     [self setNeedsDisplay];
     
 }   // end - (void) doubleTap: (UIGestureRecognizer *) gr
+
+// Implement tap: (single tap) used to select a line for
+// future deletion.
+
+- (void) tap: (UIGestureRecognizer *) gr {
+    
+    // First log the single tap to the console.
+    
+    NSLog(@"Recognized tap");
+    
+}
 
 //  Why is this strokeLine method implemented here rather
 //  than in BNRLine.m?

@@ -85,6 +85,12 @@
         
         tapRecognizer.delaysTouchesBegan = YES;
         
+        // Delay doubleTapRecognizer so that first tap
+        // is not to be assumed the first of two taps.
+        
+        [tapRecognizer
+         requireGestureRecognizerToFail: doubleTapRecognizer];
+        
         [self addGestureRecognizer: tapRecognizer];
         
     }   // end if

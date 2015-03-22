@@ -137,15 +137,80 @@
     
     CGPoint point = [gr locationInView: self];
     
+    // Instantiate UIMenuController shared object.
+    
+    UIMenuController *menu =
+    [UIMenuController sharedMenuController];
+    
+    // Instantiate a new "Delete" UIMenuItem.
+    
+    
     // Specify the line at the selected point.
     
     self.selectedLine = [self lineAtPoint: point];
+    
+    // Present menu allowing deletion of selected line.
+    
+    if (self.selectedLine) {
+        
+        // Make tap: the target of menu item action messages.
+        
+        [self becomeFirstResponder];
+        
+        UIMenuItem *deleteItem =
+        [ [UIMenuItem alloc] initWithTitle: @"Delete"
+                                    action: @selector(deleteLine:) ];
+        
+        // Add deleteItem to menu.
+        
+        menu.menuItems = @[deleteItem];
+        
+        // Specify where the menu should come from, then
+        // display it.
+        
+        [menu
+         setTargetRect: CGRectMake(point.x, point.y, 2, 2)
+         inView: self];
+        
+        // Render the menu.
+        
+        [menu setMenuVisible: YES animated: YES];
+        
+    }   else {
+        
+        
+        // Hide the menu if no line is selected.
+        
+        [ [UIMenuController sharedMenuController]
+           setMenuVisible: NO animated: YES];
+        
+    }   // end if-else
     
     // Signal event for display--set line to green selected.
     
     [self setNeedsDisplay];
     
 }
+
+- (BOOL) canBecomeFirstResponder {
+    
+    return YES;
+    
+}   // end - (BOOL) canBecomeFirstResponder
+
+// Implement deleteLine for menu display.
+
+- (void) deleteLine: (id) sender {
+    
+    // Remove the selected line from finishedLines.
+    
+    [self.finishedLines removeObject: self.selectedLine];
+    
+    // Redraw all lines minus selectedLine.
+    
+    [self setNeedsDisplay];
+    
+}   // end - (void) deleteLine: (id) sender
 
 //  Why is this strokeLine method implemented here rather
 //  than in BNRLine.m?

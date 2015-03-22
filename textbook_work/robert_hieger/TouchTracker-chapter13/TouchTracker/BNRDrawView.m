@@ -97,6 +97,17 @@
         
         [self addGestureRecognizer: tapRecognizer];
         
+        // Instantiate UILongPressGestureRecognizer object.
+        
+        UILongPressGestureRecognizer *pressRecognizer =
+        [ [UILongPressGestureRecognizer alloc]
+           initWithTarget: self
+                   action: @selector(longPress:) ];
+        
+        // Add pressRecognizer to view.
+        
+        [self addGestureRecognizer: pressRecognizer];
+        
     }   // end if
     
     return self;
@@ -190,7 +201,36 @@
     
     [self setNeedsDisplay];
     
-}
+}   // end - (void) Tap: (UIGestureRecognizer *) gr
+
+// Implement longPress:
+
+- (void) longPress: (UIGestureRecognizer *) gr {
+    
+    // Check state of gr.
+    
+    if (gr.state == UIGestureRecognizerStateBegan) {
+        
+        CGPoint point = [gr locationInView: self];
+        self.selectedLine = [self lineAtPoint: point];
+        
+        if (self.selectedLine) {
+            
+            [self.linesInProgress removeAllObjects];
+            
+        }   // end inner if
+        
+    }   else if (gr.state == UIGestureRecognizerStateEnded) {
+        
+        self.selectedLine = nil;
+        
+    }   // end if-else-if
+    
+    // Redraw view.
+    
+    [self setNeedsDisplay];
+    
+}   // end - (void) longPress: (UIGestureRecognizer *) gr
 
 - (BOOL) canBecomeFirstResponder {
     

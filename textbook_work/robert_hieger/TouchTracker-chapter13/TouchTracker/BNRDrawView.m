@@ -13,7 +13,11 @@
 
 // Extend BNRDrawView Class:
 
-@interface BNRDrawView ()
+@interface BNRDrawView () <UIGestureRecognizerDelegate>
+
+// Pan Gesture (moving) property:
+
+@property (nonatomic, strong) UIPanGestureRecognizer *moveRecognizer;
 
 // Line's beginning state:
 
@@ -107,6 +111,26 @@
         // Add pressRecognizer to view.
         
         [self addGestureRecognizer: pressRecognizer];
+        
+        // Instantiate UIPanGestureRecognizer object.
+        
+        self.moveRecognizer =
+        [ [UIPanGestureRecognizer alloc]
+           initWithTarget: self
+                   action: @selector(moveLine:) ];
+        
+        // Set moveRecognizer as its own delegate.
+        
+        self.moveRecognizer.delegate = self;
+        
+        // Prevent moveRecognizer from canceling the
+        // touches already recognized.
+        
+        self.moveRecognizer.cancelsTouchesInView = NO;
+        
+        // Add moveReocnigzer to view.
+        
+        [self addGestureRecognizer: self.moveRecognizer];
         
     }   // end if
     
@@ -500,5 +524,77 @@
     
 }   // end - (void) touchesCancelled: (NSSet *) touches
     //                     withEvent: (UIEvent *) event
+
+// Enable simultaneous gesture recognization when
+// moveRecognizer message is sent.
+
+- (BOOL) gestureRecognizer: (UIGestureRecognizer *) gestureRecognizer
+shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer *)
+other      {
+    
+    if (gestureRecognizer == self.moveRecognizer) {
+        
+        return YES;
+        
+    }   // end if
+    
+    return NO;
+    
+}   // end - (BOOL) gestureRecognizer (UIGestureRecognizer *)
+    // gestureRecognizer
+    // shouldRecognizeSimultaneouslyWithGestureRecognizer:
+    // (UIGestureRecognizer *) other
+
+// Implement moveLine: method for panning (moving) a selected line.
+
+- (void) moveLine: (UIPanGestureRecognizer *)gr {
+    
+    // If we have not selected a line, we do not do
+    // anything here.
+    
+    if (!self.selectedLine) {
+        
+        return;
+        
+    }   // end if
+    
+    // When the pan recognizer changes its position...
+    
+    if (gr.state == UIGestureRecognizerStateChanged) {
+        
+        // How far has the pan moved?
+        
+        CGPoint translation = [gr translationInView: self];
+        
+        // Add X- and Y-coordinate values stored in translation
+        // to begin and end X- and Y-coordinate values stored
+        // in selectedLine.
+        
+        CGPoint begin = self.selectedLine.begin;
+        CGPoint end = self.selectedLine.end;
+        
+        begin.x += translation.x;
+        begin.y += translation.y;
+        
+        end.x += translation.x;
+        end.y += translation.y;
+        
+        // Set the new beginning and end points of selectedLine.
+        
+        self.selectedLine.begin = begin;
+        self.selectedLine.end = end;
+        
+        // Redraw the screen with updated selectedLine.
+        
+        [self setNeedsDisplay];
+        
+        // Prevent translation from being added over and over
+        // again, causing problem with sync of gesture.
+        
+        [gr setTranslation: CGPointZero inView: self];
+        
+    }   // end if
+    
+}   // end - (void) moveLine: (UIPanGestureRecognizer *) gr
 
 @end

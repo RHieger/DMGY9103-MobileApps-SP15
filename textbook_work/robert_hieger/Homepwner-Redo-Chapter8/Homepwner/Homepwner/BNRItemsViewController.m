@@ -75,12 +75,14 @@
         cellForRowAtIndexPath: (NSIndexPath *) indexPath            {
     
     // Instantiate UITableViewCell object with default appearance.
-    // This will create a table cell to populate one of the rows
-    // in the table view.
+    // For purposes of memory optimization, we will be looking for
+    // a new available table row or reuse of one whose data has
+    // scrolled off the screen.
     
     UITableViewCell *cell =
-    [ [UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault
-                            reuseIdentifier: @"UITableViewCell" ];
+    [tableView dequeueReusableCellWithIdentifier: @"UITableViewCell"
+                                    forIndexPath: indexPath];
+    
     
     // Set the text on the cell with the description of the item
     // that is at the nth index of items where n = the row of the
@@ -107,5 +109,25 @@
     return cell;
     
 }   // end tableView: cellForRowAtIndexPath:
+
+// Because a tableViewCell might be of a type different from that
+// which is required by a BNRItem, we need our app to have more
+// control over what type of row within which a table cell is
+// instantiated. To do this, we will override the viewDidLoad method
+// as follows:
+
+- (void) viewDidLoad {
+    
+    // First call the viewDidLoad of the superclass.
+    
+    [super viewDidLoad];
+    
+    // Now specify which kind of cell class is needed for
+    // the new table cell row.
+    
+    [ self.tableView registerClass: [UITableViewCell class]
+             forCellReuseIdentifier: @"UITableViewCell" ];
+    
+}   // end - (void) viewDidLoad
 
 @end

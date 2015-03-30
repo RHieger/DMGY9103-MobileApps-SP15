@@ -2,7 +2,7 @@
 //  BNRItem.m
 //  RandomItems
 //
-//  Created by Robert Hieger on 3/28/15.
+//  Created by Robert Hieger on 3/30/15.
 //  Copyright (c) 2015 Robert Hieger. All rights reserved.
 //
 

@@ -23,7 +23,9 @@
                             settingsForTypes: UIUserNotificationTypeAlert
                                   categories: nil];
     
-    [application registerUserNotificationSettings:settings];
+    [application registerUserNotificationSettings: settings];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
     
@@ -35,8 +37,6 @@
     // Set itemsViewController as rootViewController.
     
     self.window.rootViewController = itemsViewController;
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

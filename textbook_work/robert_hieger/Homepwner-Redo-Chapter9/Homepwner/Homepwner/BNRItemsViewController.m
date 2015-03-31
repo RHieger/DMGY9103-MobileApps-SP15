@@ -33,16 +33,8 @@
     
     if (self) {
         
-        for (int i = 0; i < 5; i++) {
-            
-            // Instantiate BNRItemStore if not already
-            // done, and then send the sharedStore
-            // object instance the createItem method.
-            
-            [ [BNRItemStore sharedStore] createItem ];
-            
-        }   // end for
-
+        
+        
     }   // end if
     
     // Return pointer to BNRItemsViewController object instance.

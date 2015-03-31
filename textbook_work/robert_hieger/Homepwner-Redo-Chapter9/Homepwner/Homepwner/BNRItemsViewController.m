@@ -150,7 +150,20 @@
 
 - (IBAction) addNewItem:(id) sender {
     
+    // Make a new index path for the 0th section, last row.
     
+    NSInteger lastRow = [self.tableView numberOfRowsInSection: 0];
+    
+    // Set the index path.
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow: lastRow
+                                                inSection: 0];
+    
+    // Insert this new row into the table view.
+    
+    [self.tableView
+     insertRowsAtIndexPaths: @[indexPath]
+           withRowAnimation: UITableViewRowAnimationTop];
     
 }   // end - (IBAction) addNewItem: (id) sender
 

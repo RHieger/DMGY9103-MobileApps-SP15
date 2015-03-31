@@ -245,4 +245,18 @@ commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
     
 }   // end tableView: commitEditingStyle: forRowAtIndexPath:
 
+// Implement method for BNRItemStore to update its sharedStore
+// with moved BNRItem so that sharedStore's data matches that
+// appearing in the table view.
+
+- (void) tableView: (UITableView *) tableView
+moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
+       toIndexPath: (NSIndexPath *) destinationIndexPath    {
+    
+    [ [BNRItemStore sharedStore]
+       moveItemAtIndex: sourceIndexPath.row
+               toIndex: destinationIndexPath.row];
+    
+}   // end tableView: moveRowAtIndexPath: toIndexPath:
+
 @end

@@ -121,4 +121,33 @@
     
 }   // end - (void) removeItem (BNRItem *) item
 
+// Implement method to move BNRItem from its current index
+// to the one specified in toIndex
+
+- (void)moveItemAtIndex: (NSUInteger) fromIndex
+                toIndex: (NSUInteger) toIndex       {
+    
+    // If fromIndex and toIndex are at the same location,
+    // do nothing.
+    
+    if (fromIndex == toIndex) {
+        
+        return;
+        
+    }   // end if
+    
+    // Get pointer to object being moved so you can re-insert it.
+    
+    BNRItem *item = self.privateItems[fromIndex];
+    
+    // Remove Item from its current location in privateItems.
+    
+    [self.privateItems removeObjectAtIndex: fromIndex];
+    
+    // Insert same Item at new location in privateItems.
+    
+    [self.privateItems insertObject: item atIndex: toIndex];
+    
+}   // end - (voide) moveItemAtIndex: toIndex:
+
 @end

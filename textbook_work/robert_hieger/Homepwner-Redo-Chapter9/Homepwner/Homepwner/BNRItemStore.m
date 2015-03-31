@@ -113,4 +113,12 @@
     
 }   // end - (BNRItem *) createItem
 
+// Implement method to remove BNRItem from sharedStore.
+
+- (void) removeItem: (BNRItem *) item {
+    
+    [self.privateItems removeObjectIdenticalTo: item];
+    
+}   // end - (void) removeItem (BNRItem *) item
+
 @end

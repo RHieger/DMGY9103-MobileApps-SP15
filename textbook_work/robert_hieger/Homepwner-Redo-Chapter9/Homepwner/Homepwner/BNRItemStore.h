@@ -17,8 +17,14 @@
 @property (nonatomic, readonly, copy) NSArray *allItems;
 
 - (BNRItem *) createItem;       // Method to create random item
-// for inclusion in *privateItems
-// NSMutableArray object.
+                                // for inclusion in *privateItems
+                                // NSMutableArray object.
+
+- (void) removeItem: (BNRItem *) item;  // Method to remove item
+                                        // from table view and
+                                        // delete its object from
+                                        // the sharedStore
+                                        // dataStore.
 
 // Notice that this is a class method and prefixed with +
 // instead of -.

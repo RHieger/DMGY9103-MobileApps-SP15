@@ -213,4 +213,36 @@
     
 }   // end - (UIView *) headerView
 
+// Impement logic to delete a row from the table view.
+
+- (void) tableView: (UITableView *) tableView
+commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
+ forRowAtIndexPath: (NSIndexPath *) indexPath                   {
+    
+    // If the table view asks to commit a delete command...
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        // Instantiate NSArray, a copy of allItems NSArray.
+        
+        NSArray *items = [ [BNRItemStore sharedStore] allItems];
+        
+        // Selected current BNRItem intended for deletion.
+        
+        BNRItem *item =items[indexPath.row];
+        
+        // Delete that item at the indexPath.row from BNRItemStore.
+        
+        [ [BNRItemStore sharedStore] removeItem: item ];
+        
+        // Now that item is deleted from the DataStore, remove its
+        // row from the table view with an animation.
+        
+        [tableView deleteRowsAtIndexPaths: @[indexPath]
+                         withRowAnimation: UITableViewRowAnimationFade];
+        
+    }   // end if
+    
+}   // end tableView: commitEditingStyle: forRowAtIndexPath:
+
 @end

@@ -150,11 +150,14 @@
 
 - (IBAction) addNewItem:(id) sender {
     
-    // Make a new index path for the 0th section, last row.
+    // Instantiate a new BNRItem object and add it to sharedStore.
     
-    NSInteger lastRow = [self.tableView numberOfRowsInSection: 0];
+    BNRItem *newItem = [ [BNRItemStore sharedStore] createItem ];
     
-    // Set the index path.
+    // Figure out where the BNRItem newItem is in the array.
+    
+    NSInteger lastRow = [ [ [BNRItemStore sharedStore] allItems]
+                         indexOfObject: newItem];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow: lastRow
                                                 inSection: 0];

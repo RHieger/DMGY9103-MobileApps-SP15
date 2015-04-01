@@ -111,4 +111,20 @@
     
 }   // end - (void) viewWillDisappear (BOOL) animated
 
+// Implement setItem so that the detail view will set its
+// title according to the itemName being viewed.
+
+- (void) setItem: (BNRItem *) item  {
+    
+    // Set instance variable to the value of the item
+    // within the selected cell.
+    
+    _item = item;
+    
+    // Set navigationItem.name equal to the itemName of _item.
+    
+    self.navigationItem.title = _item.itemName;
+    
+}   // end - (void) setItem: (BNRItem *) item
+
 @end

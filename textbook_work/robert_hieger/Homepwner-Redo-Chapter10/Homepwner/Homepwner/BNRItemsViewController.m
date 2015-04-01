@@ -46,6 +46,19 @@
         
         navItem.title = @"Homepwner";
         
+        // Create a new BarButtonItem that will send addNewItem:
+        // to BNRItemsViewController.
+        
+        UIBarButtonItem *bbi =
+        [ [UIBarButtonItem alloc]
+         initWithBarButtonSystemItem: UIBarButtonSystemItemAdd
+         target: self
+         action: @selector(addNewItem:) ];
+        
+        // Set this BarButtonItem as the rightmost button position.
+        
+        navItem.rightBarButtonItem = bbi;
+        
     }   // end if
     
     // Return pointer to BNRItemsViewController object instance.

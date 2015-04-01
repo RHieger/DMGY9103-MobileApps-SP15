@@ -59,6 +59,10 @@
         
         navItem.rightBarButtonItem = bbi;
         
+        // Add left BarButtonItem.
+        
+        navItem.leftBarButtonItem = self.editButtonItem;
+        
     }   // end if
     
     // Return pointer to BNRItemsViewController object instance.

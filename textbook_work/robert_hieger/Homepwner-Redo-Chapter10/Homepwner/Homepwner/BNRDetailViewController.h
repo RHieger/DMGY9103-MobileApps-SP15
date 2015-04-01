@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+// Forward declare BNRItem.
+
+@class BNRItem;
+
 @interface BNRDetailViewController : UIViewController
+
+// Creating the property below gives the detailViewController
+// object access to the data contained within the currently
+// tapped UITableView row.
+
+@property (nonatomic, strong) BNRItem *item;
 
 @end

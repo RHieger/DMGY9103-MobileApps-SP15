@@ -276,6 +276,23 @@ moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
     BNRDetailViewController *detailViewController =
     [ [BNRDetailViewController alloc] init ];
     
+    // Give detailViewController access to the selected row
+    // before its view is pushed onto the stack.
+    
+    // First instantiate local items NSArray copied from the
+    // sharedStore allItems NSArray.
+    
+    NSArray *items = [ [BNRItemStore sharedStore] allItems ];
+    
+    // Instantiate selectedItem object to contain the selected
+    // row for display in the detail view.
+    
+    BNRItem *selectedItem = items[indexPath.row];
+    
+    // Create pointer to selectedItem for detailViewController.
+    
+    detailViewController.item = selectedItem;
+    
     // Push detailViewController to the top of tableView's stack.
     
     [self.navigationController pushViewController: detailViewController

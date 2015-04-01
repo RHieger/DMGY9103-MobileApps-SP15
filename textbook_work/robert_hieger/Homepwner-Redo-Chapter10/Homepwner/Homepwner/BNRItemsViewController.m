@@ -36,7 +36,15 @@
     
     if (self) {
         
+        // Set navigationItem's title to read "Homepwnr"
         
+        // First set a pointer to self.navigationItem:
+        
+        UINavigationItem *navItem = self.navigationItem;
+        
+        // Next, set the title to display in navItem.
+        
+        navItem.title = @"Homepwner";
         
     }   // end if
     

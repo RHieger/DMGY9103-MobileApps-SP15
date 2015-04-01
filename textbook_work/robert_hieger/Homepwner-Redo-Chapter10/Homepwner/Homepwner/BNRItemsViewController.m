@@ -7,6 +7,9 @@
 //
 
 #import "BNRItemsViewController.h"
+#import "BNRDetailViewController.h"     // Enables pushing view onto
+                                        // itemsViewController stack.
+
 #import "BNRItemStore.h"                // Enables access to sharedStore.
 #import "BNRItem.h"                     // Enables access to BNRItem class.
 
@@ -258,5 +261,26 @@ moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
                toIndex: destinationIndexPath.row];
     
 }   // end tableView: moveRowAtIndexPath: toIndexPath:
+
+// Implement logic to detect that a row in itemsViewController
+// has been tapped, which should result in pushing the
+// detailViewsController onto the stack and display the detail
+// view for that row.
+
+- (void)        tableView: (UITableView *) tableView
+  didSelectRowAtIndexPath: (NSIndexPath *) indexPath    {
+    
+    // Instantiate BNRDetailViewController object to
+    // display row detail view.
+    
+    BNRDetailViewController *detailViewController =
+    [ [BNRDetailViewController alloc] init ];
+    
+    // Push detailViewController to the top of tableView's stack.
+    
+    [self.navigationController pushViewController: detailViewController
+                                         animated: YES ];
+    
+}   // end tableView: didSelectRowAtIndexPath:
 
 @end

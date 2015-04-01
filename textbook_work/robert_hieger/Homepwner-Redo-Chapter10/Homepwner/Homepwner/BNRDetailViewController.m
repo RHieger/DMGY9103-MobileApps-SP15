@@ -82,4 +82,33 @@
     
 }   // end - (void) viewWillAppear: (BOOL) animated
 
+// Implement viewWillDisappear to enable saving edits made
+// in the detail view so they appear updated in the table view.
+
+- (void) viewWillDisappear: (BOOL) animated {
+    
+    // Call superclass to allow it to do any preliminary tasks.
+    
+    [super viewWillDisappear: animated];
+    
+    // Tell firstResponder to resign.
+    
+    [self.view endEditing: YES];
+    
+    // Save changes.
+    
+    // First set pointer to self.item.
+    
+    BNRItem *item = self.item;
+    
+    // Set text fields to contain the newly edited values.
+    
+    item.itemName = self.nameField.text;
+    
+    item.serialNumber = self.serialNumberField.text;
+    
+    item.valueInDollars = [self.valueField.text intValue];
+    
+}   // end - (void) viewWillDisappear (BOOL) animated
+
 @end

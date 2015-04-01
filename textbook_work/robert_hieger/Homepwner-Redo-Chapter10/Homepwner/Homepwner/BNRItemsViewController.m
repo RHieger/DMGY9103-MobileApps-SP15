@@ -300,4 +300,20 @@ moveRowAtIndexPath: (NSIndexPath *) sourceIndexPath
     
 }   // end tableView: didSelectRowAtIndexPath:
 
+// Override viewWillAppear so that table view reflects
+// changes saved within detail view.
+
+- (void) viewWillAppear: (BOOL) animated    {
+    
+    // Call superclass to let it do any of the preliminaries.
+    
+    [super viewWillAppear: animated];
+    
+    // Refresh table view
+    
+    [self.tableView reloadData];
+    
+}   // end - (void) viewWillAppear: (BOOL) animated
+
+
 @end

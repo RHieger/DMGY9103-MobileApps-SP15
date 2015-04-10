@@ -83,19 +83,13 @@
 - (UITableViewCell *) tableView: (UITableView *) tableView
           cellForRowAtIndexPath: (NSIndexPath *) indexPath  {
     
-    // Instantiate a UITableViewCell object with default
-    // appearance.
+    // Get a new or recycled cell in which to place table
+    // row data.
     
-    UITableViewCell *cell =
-    [ [UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault
-                            reuseIdentifier: @"UITableViewCell" ];
-    
-    // Set the text on the cell with the description of the
-    // item that is at the nth index of items, where n = the
-    // row on which this cell will appear in tableView.
-    
-    // First return a copy of the allItems array for use
-    // in UITableView.
+    UITableViewCell *cell = [tableView
+                         dequeueReusableCellWithIdentifier:
+                         @"UITableViewCell"
+                         forIndexPath: indexPath];
     
     NSArray *items = [ [BNRItemStore sharedStore] allItems];
     
@@ -112,5 +106,21 @@
     return cell;
     
 }   // end tableView: cellForRowAtIndexPath:
+
+// Override viewDidLoad: so that UITableViewCell is registered
+// as the cell type for reuse.
+
+- (void) viewDidLoad    {
+    
+    // Call the superclass for viewDidLoad.
+    
+    [super viewDidLoad];
+    
+    // Register cell type for reuse.
+    
+    [self.tableView registerClass: [UITableViewCell class]
+           forCellReuseIdentifier: @"UITableViewCell"];
+    
+}   // end - (void) viewDidLoad
 
 @end

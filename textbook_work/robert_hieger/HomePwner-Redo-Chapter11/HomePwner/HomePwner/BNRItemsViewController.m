@@ -10,6 +10,14 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
+// Class extension to add a table header view:
+
+@interface BNRItemsViewController ()
+
+@property (nonatomic, strong) IBOutlet UIView *headerView;
+
+@end
+
 @implementation BNRItemsViewController
 
 // Call superclass' designated initializer from within init.
@@ -107,6 +115,20 @@
     
 }   // end tableView: cellForRowAtIndexPath:
 
+// Methods for Adding and Editing Table Rows:
+
+- (IBAction) addNewItem:(id) sender {
+    
+    
+    
+}   // end - (IBAction) AddNewItem: (id) sender
+
+- (IBAction) toggleEditingMode: (id) sender {
+    
+    
+    
+}   // end -- (IBAction) toggleEditingMode: (id) sender
+
 // Override viewDidLoad: so that UITableViewCell is registered
 // as the cell type for reuse.
 
@@ -121,6 +143,40 @@
     [self.tableView registerClass: [UITableViewCell class]
            forCellReuseIdentifier: @"UITableViewCell"];
     
+    // Set pointer to headerView.
+    
+    UIView *header = self.headerView;
+    
+    // Place header in view hiearchy.
+    
+    [self.tableView setTableHeaderView: header];
+    
 }   // end - (void) viewDidLoad
+
+// Implement headerView for inclusion in view hierarchy.
+// NOTE: This getter method implements a lazy instantiation
+// that creates the headerView object only as soon as it
+// is needed.
+
+- (UIView *) headerView {
+    
+    // If you have not loaded the headerView view yet...
+    
+    if (! _headerView) {
+        
+        // Load headerView.xib by sending mainBundle message
+        // to NSBundle.
+        
+        [ [NSBundle mainBundle] loadNibNamed: @"HeaderView"
+                                       owner: self
+                                     options: nil ];
+        
+    }   // end if
+    
+    // Return headerView instance variable.
+    
+    return _headerView;
+    
+}   // end - (UIView *) headerView
 
 @end

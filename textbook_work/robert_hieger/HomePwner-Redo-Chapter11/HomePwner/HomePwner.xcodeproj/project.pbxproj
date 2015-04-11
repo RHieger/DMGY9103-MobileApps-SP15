@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5A2EB421AD8FDA20015D1AC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A2EB411AD8FDA20015D1AC /* HeaderView.xib */; };
 		C5F2E8951AD1F1E30061F413 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F2E8941AD1F1E30061F413 /* main.m */; };
 		C5F2E8981AD1F1E30061F413 /* BNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F2E8971AD1F1E30061F413 /* BNRAppDelegate.m */; };
 		C5F2E8A01AD1F1E30061F413 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5F2E89F1AD1F1E30061F413 /* Images.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5A2EB411AD8FDA20015D1AC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		C5F2E88F1AD1F1E30061F413 /* HomePwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F2E8931AD1F1E30061F413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5F2E8941AD1F1E30061F413 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				C5F2E8BF1AD242EE0061F413 /* BNRItemStore.m */,
 				C5F2E8B81AD1F9240061F413 /* BNRItemsViewController.h */,
 				C5F2E8B91AD1F9240061F413 /* BNRItemsViewController.m */,
+				C5A2EB411AD8FDA20015D1AC /* HeaderView.xib */,
 				C5F2E89F1AD1F1E30061F413 /* Images.xcassets */,
 				C5F2E8A11AD1F1E30061F413 /* LaunchScreen.xib */,
 				C5F2E8921AD1F1E30061F413 /* Supporting Files */,
@@ -207,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A2EB421AD8FDA20015D1AC /* HeaderView.xib in Resources */,
 				C5F2E8A31AD1F1E30061F413 /* LaunchScreen.xib in Resources */,
 				C5F2E8A01AD1F1E30061F413 /* Images.xcassets in Resources */,
 			);
@@ -415,6 +419,7 @@
 				C5F2E8B41AD1F1E30061F413 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5F2E8B51AD1F1E30061F413 /* Build configuration list for PBXNativeTarget "HomePwnerTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				C5F2E8B71AD1F1E30061F413 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

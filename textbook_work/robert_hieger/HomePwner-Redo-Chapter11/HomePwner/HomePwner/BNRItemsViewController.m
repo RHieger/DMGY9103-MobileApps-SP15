@@ -125,7 +125,29 @@
 
 - (IBAction) toggleEditingMode: (id) sender {
     
+    // If you are currently in editing mode...
     
+    if (self.isEditing) {
+        
+        // Set text of button according to state of editing mode.
+        
+        [sender setTitle: @"Edit" forState: UIControlStateNormal];
+        
+        // Turn off editing mode.
+        
+        [self setEditing: NO animated: YES];
+        
+    }   else {
+        
+        // Set text of button according to state of editing mode.
+        
+        [sender setTitle: @"Done" forState: UIControlStateNormal];
+        
+    }   // end if-else (self.isEditing)
+    
+    // Enter editing mode.
+    
+    [self setEditing: YES animated: YES];
     
 }   // end -- (IBAction) toggleEditingMode: (id) sender
 

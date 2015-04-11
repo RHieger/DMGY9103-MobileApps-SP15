@@ -30,13 +30,6 @@
     
     if (self) {
         
-        for (int i = 0; i < 5; i++) {
-            
-            // Instantiate BNRItem and initialize.
-            
-            [ [BNRItemStore sharedStore] createItem ];
-            
-        }   // end for
         
     }   // end if
     

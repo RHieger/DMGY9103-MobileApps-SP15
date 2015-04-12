@@ -213,4 +213,36 @@
     
 }   // end - (UIView *) headerView
 
+// Implement method to remove specific row at specific
+// index from the UITableView.
+
+- (void) tableView: (UITableView *) tableView
+commitEditingStyle: (UITableViewCellEditingStyle) editingStyle
+ forRowAtIndexPath: (NSIndexPath *) indexPath                   {
+    
+    // If the table view is asking to commit a delete command...
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        // Set pointer to allItems array of BNRItems.
+        
+        NSArray *items = [ [BNRItemStore sharedStore] allItems ];
+        
+        // Set pointer to item being deleted at current indexPath.
+        
+        BNRItem *item = items[indexPath.row];
+        
+        // Now delete the item.
+        
+        [ [BNRItemStore sharedStore] removeItem: item ];
+        
+        // Accompany deletion with animation.
+        
+        [tableView deleteRowsAtIndexPaths: @[indexPath]
+                         withRowAnimation: UITableViewRowAnimationFade];
+        
+    }   // end if (editingStyle == UITableViewCellEditingStyleDelete)
+    
+}   // end tableView: commitEditingStyle: forRowAtIndexPath
+
 @end

@@ -40,4 +40,8 @@
 
 - (BNRItem *) createItem;
 
+// Instance method to delete a BNRItem object.
+
+- (void) removeItem: (BNRItem *) item;
+
 @end

@@ -112,4 +112,13 @@
     
 }   // end - (BNRItem *) createItem
 
+// Implement removeItem method to provide the functionality
+// to delete a BNRItem object.
+
+- (void) removeItem: (BNRItem *) item {
+    
+    [self.privateItems removeObjectIdenticalTo: item];
+    
+}   // end - (void) removeItem: (BNRItem *) item
+
 @end
